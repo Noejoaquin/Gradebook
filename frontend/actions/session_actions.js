@@ -31,11 +31,3 @@ export const logout = () => (dispatch) => {
   .then( () => dispatch(receiveCurrentUser(null)),
   (errors) => dispatch(receiveErrors(errors.responseJSON)));
 };
-
-
-export const signUp = (user) => (dispatch) => {
-  return APIUtil.signUp(user)
-                .then( (user) => dispatch(receiveCurrentUser(user)),
-                      (errors) => dispatch(receiveErrors(errors.responseJSON))
-                    );
-};
