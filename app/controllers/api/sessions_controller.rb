@@ -4,6 +4,13 @@ class Api::SessionsController < ApplicationController
   @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
   if @user
     login(@user)
+    if @user.role == 'teacher'
+      render 'api/users/teachers/show'
+    elsif @user.role == 'student'
+      render 'api/users/students/show'
+    else
+      render 'api/users/admins/show'
+    end
     # logic for the correct view
   else
     render json: ['Invalid combination of username and password'], status: 401
