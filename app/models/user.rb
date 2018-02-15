@@ -6,6 +6,23 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token!
 
+  has_many :teachers,
+  primary_key: :id,
+  class_name: 'Teacher',
+  foreign_key: :user_id
+
+  has_many :students,
+  primary_key: :id,
+  class_name: 'Student',
+  foreign_key: :user_id
+
+  has_many :admins,
+  primary_key: :id,
+  class_name: 'Admin',
+  foreign_key: :user_id
+
+
+
   attr_reader :password
 
   def self.find_by_credentials(email, password)
