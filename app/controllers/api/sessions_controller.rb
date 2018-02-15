@@ -11,7 +11,6 @@ class Api::SessionsController < ApplicationController
     else
       render 'api/users/admins/show'
     end
-    # logic for the correct view
   else
     render json: ['Invalid combination of username and password'], status: 401
   end
