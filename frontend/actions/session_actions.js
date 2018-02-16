@@ -27,7 +27,8 @@ export const login = (currentUser) => (dispatch) => {
 
 
 export const logout = () => (dispatch) => {
+  debugger
   return APIUtil.logoutUser()
-  .then( () => dispatch(receiveCurrentUser(null)),
+  .then(() => dispatch(receiveCurrentUser(null)),
   (errors) => dispatch(receiveErrors(errors.responseJSON)));
 };
