@@ -1,1 +1,21 @@
+<script type="text/javascript">
+  <% if logged_in?  && current_user.role == 'teacher'%>
+    window.currentUser = <%= render(
+      "api/users/teachers/show.json.jbuilder",
+      user: current_user
+    ).html_safe %>
+    <% elsif logged_in? && current_user.role == 'student' %>
+    window.currentUser = <%= render(
+      "api/users/students/show.json.jbuilder",
+      user: current_user
+    ).html_safe %>
+    <% elsif logged_in? && current_user.role == 'admin' %>
+    window.currentUser = <%= render(
+      "api/users/admins/show.json.jbuilder",
+      user: current_user
+    ).html_safe %>
+  <% end %>
+</script>
+
+
 <main id='root'></main>

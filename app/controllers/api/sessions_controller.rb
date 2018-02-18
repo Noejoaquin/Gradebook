@@ -5,11 +5,11 @@ class Api::SessionsController < ApplicationController
   if @user
     login(@user)
     if @user.role == 'teacher'
-      render 'api/users/teachers/show'
+      render 'api/users/teachers/_show'
     elsif @user.role == 'student'
-      render 'api/users/students/show'
+      render 'api/users/students/_show'
     else
-      render 'api/users/admins/show'
+      render 'api/users/admins/_show'
     end
   else
     render json: ['Invalid combination of username and password'], status: 401
