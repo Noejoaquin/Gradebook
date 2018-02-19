@@ -9,8 +9,8 @@ const App = () => (
   <div>
     <AuthRoute path="/" component={SessionFormContainer} />
     <Switch>
-      <Route path="/home/teacher/:id" component={TeacherProfileContainer} />
       <Route path="/home" component={HomeRouterContainer} />
+      <Route path="/teacher/:id" component={TeacherProfileContainer} />
     </Switch>
   </div>
 );

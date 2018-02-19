@@ -8,11 +8,11 @@ class HomeRouter extends React.Component {
 
   componentDidMount() {
     if (this.props.role === "student") {
-      this.props.ownProps.history.push(`/home/student/${this.props.id}`);
+      this.props.ownProps.history.push(`/student/${this.props.id}`);
     } else if (this.props.role === "teacher") {
-      this.props.ownProps.history.push(`/home/teacher/${this.props.id}`);
+      this.props.ownProps.history.push(`/teacher/${this.props.id}`);
     } else {
-      this.props.ownProps.history.push(`/home/admin/${this.props.id}`);
+      this.props.ownProps.history.push(`/admin/${this.props.id}`);
     }
   }
 

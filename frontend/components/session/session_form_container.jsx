@@ -5,8 +5,10 @@ import SessionForm from "./session_form";
 
 const mapStateToProps = (state, ownProps) => {
   let errors = state.errors.session;
+
   return {
-    errors
+    errors,
+    ownProps
   };
 };
 
