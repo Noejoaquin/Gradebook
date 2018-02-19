@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
       <div>
         <div className="session-form-header">
           <h1 id="header-1">Welcome to Gradebook!</h1>
-          <h2 id="header-2">Login To Your Account Bellow</h2>
+          <h2 id="header-2">Login To Your Account Below</h2>
         </div>
         <div className="session-form-container">
           {error}

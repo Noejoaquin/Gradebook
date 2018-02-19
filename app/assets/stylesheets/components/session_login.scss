@@ -25,15 +25,18 @@
   border: 1px solid blue;
   width: 400px;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 50px;
   height: 300px;
+  background-color: #d0f1cd;
 }
 .session-form {
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 }
 input {
   border: 1px solid black;
+  margin-bottom: 2px;
 }
 .field {
   font-size: 20px;
