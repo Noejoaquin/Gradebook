@@ -28,31 +28,37 @@ class SessionForm extends React.Component {
 
     return (
       <div>
-        <div>
-          <h1>Welcome to Gradebook!</h1>
-          <h2>Login To Your Account Bellow</h2>
+        <div className="session-form-header">
+          <h1 id="header-1">Welcome to Gradebook!</h1>
+          <h2 id="header-2">Login To Your Account Bellow</h2>
         </div>
-        {error}
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              {" "}
-              Email
-              <input
-                onChange={this.handleChange("email")}
-                value={this.state.email}
-              />
-            </label>
-            <label>
-              {" "}
-              Password
-              <input
-                onChange={this.handleChange("password")}
-                value={this.state.password}
-              />
-            </label>
-            <button onSubmit={this.handleSubmit}>login</button>
-          </form>
+        <div className="session-form-container">
+          {error}
+          <div className="session-form">
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                {" "}
+                <li className='field'>Email</li>
+                <li>
+                  <input
+                    onChange={this.handleChange("email")}
+                    value={this.state.email}
+                  />
+                </li>
+              </label>
+              <label>
+                {" "}
+                <li className='field'>Password</li>
+                <li>
+                  <input
+                    onChange={this.handleChange("password")}
+                    value={this.state.password}
+                  />
+                </li>
+              </label>
+              <button className='login-button' onSubmit={this.handleSubmit}>login</button>
+            </form>
+          </div>
         </div>
       </div>
     );

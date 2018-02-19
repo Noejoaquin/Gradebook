@@ -6,7 +6,7 @@ import TeacherProfileContainer from "./teacher/teacher_profile_container";
 import { AuthRoute } from "../util/route_util";
 
 const App = () => (
-  <div>
+  <div className='app'>
     <AuthRoute path="/" component={SessionFormContainer} />
     <Switch>
       <Route path="/home" component={HomeRouterContainer} />
