@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
     let id = state.session.currentUser.id
     return {
       role,
-      id
+      id,
+      ownProps
     }
 }
 
