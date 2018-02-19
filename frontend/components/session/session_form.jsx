@@ -6,7 +6,6 @@ class SessionForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = { email: "", password: "" };
-    // this.errorConstructor = this.errorConstructor.bind(this)
   }
 
   handleChange(field) {
@@ -19,15 +18,12 @@ class SessionForm extends React.Component {
     this.props.login(this.state);
   }
 
-
-
-
   render() {
     let error;
-    if (this.props.errors){
-      error = <p>{this.props.errors[0]}</p>
+    if (this.props.errors) {
+      error = <p>{this.props.errors[0]}</p>;
     } else {
-      error = <p></p>
+      error = <p />;
     }
 
     return (
@@ -42,12 +38,18 @@ class SessionForm extends React.Component {
             <label>
               {" "}
               Email
-              <input onChange={this.handleChange("email")} value={this.state.email}/>
+              <input
+                onChange={this.handleChange("email")}
+                value={this.state.email}
+              />
             </label>
             <label>
               {" "}
               Password
-              <input onChange={this.handleChange("password")} value={this.state.password}/>
+              <input
+                onChange={this.handleChange("password")}
+                value={this.state.password}
+              />
             </label>
             <button onSubmit={this.handleSubmit}>login</button>
           </form>

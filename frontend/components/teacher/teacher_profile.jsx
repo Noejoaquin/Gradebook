@@ -3,23 +3,15 @@ import React from "react";
 class TeacherProfile extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
-  handleChange(field) {
+  handleChange(field) {}
 
-  }
-
-  handleSubmit() {
-  }
+  handleSubmit() {}
 
   render() {
-    debugger
-    return (
-      <div>
-        TeacherProfile
-      </div>
-    );
+    debugger;
+    return <div>TeacherProfile</div>;
   }
 }
 
