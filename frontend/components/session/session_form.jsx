@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = { email: "", password: "" };
+    // this.errorConstructor = this.errorConstructor.bind(this)
   }
 
   handleChange(field) {
@@ -18,13 +19,24 @@ class SessionForm extends React.Component {
     this.props.login(this.state);
   }
 
+
+
+
   render() {
+    let error;
+    if (this.props.errors){
+      error = <p>{this.props.errors[0]}</p>
+    } else {
+      error = <p></p>
+    }
+
     return (
       <div>
         <div>
           <h1>Welcome to Gradebook!</h1>
           <h2>Login To Your Account Bellow</h2>
         </div>
+        {error}
         <div>
           <form onSubmit={this.handleSubmit}>
             <label>
