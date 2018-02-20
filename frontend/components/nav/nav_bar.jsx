@@ -16,7 +16,8 @@ class NavBar extends React.Component{
     return (
       <div className="nav-container">
         <h1 className="nav-header">Gradebook</h1>
-        <button onClick={this.handleLogout}>Logout</button>
+        <div className='nav-button' onClick={this.handleLogout}>Logout</div>
+        <div className='border-bottom'></div>
       </div>
     );
   }
