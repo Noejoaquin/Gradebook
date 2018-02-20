@@ -11,4 +11,4 @@ const CoursesReducer = (state = {}, action) => {
   }
 }
 
-export default EventsReducer;
+export default CoursesReducer;
