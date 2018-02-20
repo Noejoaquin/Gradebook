@@ -7,4 +7,14 @@ class Student < ApplicationRecord
   class_name: 'User',
   foreign_key: :user_id
 
+  has_many :attendances,
+  primary_key: :id,
+  class_name: 'Attendance',
+  foreign_key: :student_id
+
+  has_many :courses,
+  through: :attendances,
+  source: :course
+
+
 end
