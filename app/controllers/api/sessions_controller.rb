@@ -12,7 +12,7 @@ class Api::SessionsController < ApplicationController
       render 'api/users/admins/_show'
     end
   else
-    debugger
+    # debugger
     render json: ['Invalid combination of username and password'], status: 401
   end
 end
