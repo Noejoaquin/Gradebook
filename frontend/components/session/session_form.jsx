@@ -20,7 +20,9 @@ class SessionForm extends React.Component {
   }
 
   handleGuestTeacherLogin(){
-    this.props.login({email: 'noe', password: 'starwars'})
+    this.setState({email: 'noe'})
+    this.setState({password:'starwars'})
+    this.props.login(this.state)
   }
 
   render() {
