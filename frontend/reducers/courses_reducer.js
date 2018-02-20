@@ -5,7 +5,7 @@ import merge from 'lodash/merge';
 const CoursesReducer = (state = {}, action) => {
   switch(action.type){
     case RECEIVE_COURSES:
-      return action.events;
+      return action.courses;
     default:
       return state;
   }

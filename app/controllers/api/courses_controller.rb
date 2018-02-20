@@ -1,7 +1,7 @@
 class Api::CoursesController < ApplicationController
 
   def index
-    debugger
+    # debugger
     @courses = Course.all
   end
 

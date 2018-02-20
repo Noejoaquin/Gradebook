@@ -1,7 +1,6 @@
-export const getCourses = (data) => (
+export const getCourses = () => (
   $.ajax({
     method: 'GET',
     url: '/api/courses',
-    data: {data}
   })
 )

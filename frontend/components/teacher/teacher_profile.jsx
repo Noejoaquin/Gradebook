@@ -3,15 +3,27 @@ import React from "react";
 class TeacherProfile extends React.Component {
   constructor(props) {
     super(props);
+    this.courses = this.props.courses
   }
 
-  handleChange(field) {}
-
-  handleSubmit() {}
+  componentDidMount(){
+    if (this.props.courses.length === 0){
+      this.props.fetchCourses()
+    }
+  }
 
   render() {
-    
-    return <div>TeacherProfile</div>;
+    let course;
+    if (this.props.courses.length !== 0){
+      debugger
+      course = <li>{this.props.courses[0].name}</li>
+    }
+    return(
+      <div>
+        TeacherProfile
+        {course}
+      </div>
+    )
   }
 }
 
