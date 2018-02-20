@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = { email: "", password: "" };
+    this.handleGuestTeacherLogin = this.handleGuestTeacherLogin.bind(this);
   }
 
   handleChange(field) {
@@ -18,10 +19,14 @@ class SessionForm extends React.Component {
     this.props.login(this.state);
   }
 
+  handleGuestTeacherLogin(){
+    this.props.login({email: 'noe', password: 'starwars'})
+  }
+
   render() {
     let error;
     if (this.props.errors) {
-      error = <p>{this.props.errors[0]}</p>;
+      error = <p className='session-error'>{this.props.errors[0]}</p>;
     } else {
       error = <p />;
     }
@@ -56,7 +61,10 @@ class SessionForm extends React.Component {
                   />
                 </li>
               </label>
-              <button className='login-button' onSubmit={this.handleSubmit}>login</button>
+
+                <button className='login-button login' onSubmit={this.handleSubmit}>login</button>
+                <br/>
+                <button className='login-button teacher-login' onClick={this.handleGuestTeacherLogin}>Guest Teacher Login</button>
             </form>
           </div>
         </div>
