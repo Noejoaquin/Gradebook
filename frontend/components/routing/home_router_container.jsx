@@ -3,11 +3,9 @@ import { connect } from "react-redux";
 import HomeRouter from "./home_router";
 
 const mapStateToProps = (state, ownProps) => {
-  let role = state.session.currentUser.role;
-  let id = state.session.currentUser.id;
+  let currentUser = state.session.currentUser
   return {
-    role,
-    id,
+    currentUser,
     ownProps
   };
 };

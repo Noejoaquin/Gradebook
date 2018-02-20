@@ -2,12 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class NavBar extends React.Component{
-  constructor(){
+  constructor(props){
+    super(props)
     this.handleLogout = this.handleLogout.bind(this)
   }
 
   handleLogout(){
     this.props.logout();
+    this.props.ownProps.history.push('/')
   }
 
   render() {

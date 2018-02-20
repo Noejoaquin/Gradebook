@@ -10,6 +10,7 @@ class TeacherProfile extends React.Component {
   handleSubmit() {}
 
   render() {
+    debugger
     return <div>TeacherProfile</div>;
   }
 }

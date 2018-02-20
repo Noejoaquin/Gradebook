@@ -5,6 +5,7 @@ import TeacherProfile from "./teacher_profile";
 
 const mapStateToProps = (state, ownProps) => {
   let currentUser = state.session.currentUser;
+  debugger
   return {
     currentUser
   };
