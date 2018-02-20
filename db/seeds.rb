@@ -7,21 +7,36 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-
+#teachers
 user1 = User.create!(email: 'noe', first_name: 'noe', last_name: 'Jimenez', password:'starwars', role: 'teacher')
-user2 = User.create!(email: 'joe', first_name: 'joe', last_name: 'Jimenez', password:'starwars', role: 'student')
+
+#students
+user2 = User.create!(email: 'Joe', first_name: 'Joe', last_name: 'Jimenez', password:'starwars', role: 'student')
+user4 = User.create!(email: 'Liz', first_name: 'Liz', last_name: 'Jimenez', password:'starwars', role: 'student')
+user5 = User.create!(email: 'Jackie', first_name: 'Jackie', last_name: 'Jimenez', password:'starwars', role: 'student')
+user6 = User.create!(email: 'Micael', first_name: 'Micael', last_name: 'Jimenez', password:'starwars', role: 'student')
+
+
+
 user3 =  User.create!(email: 'jack', first_name: 'jack', last_name: 'Jimenez', password:'starwars', role: 'admin')
 
 
 Teacher.destroy_all
 
-Teacher.create!(user_id: user1.id, department: 'Mathematics' )
+teacher1 = Teacher.create!(user_id: user1.id, department: 'Mathematics' )
 
 
 Student.destroy_all
 
-Student.create!(user_id: user2.id)
+student1 = Student.create!(user_id: user2.id)
+student2 = Student.create!(user_id: user4.id)
+student3 = Student.create!(user_id: user5.id)
+student4 = Student.create!(user_id: user6.id)
+
 
 Admin.destroy_all
 
 Admin.create!(title: 'Dean of Admissions', user_id: user3.id)
+
+Course.destroy_all
+course1 = Course.create!(name: 'English Literature 101', teacher_id: teacher1.id)
