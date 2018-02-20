@@ -7,15 +7,15 @@ class HomeRouter extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    
     if (this.props.currentUser === null ){
       this.props.ownProps.history.push('/login')
     } else {
-      debugger
+      
       if (this.props.currentUser.role === "student") {
         this.props.ownProps.history.push(`/n/student/${this.props.currentUser.id}`);
       } else if (this.props.currentUser.role === "teacher") {
-        debugger
+        
         this.props.ownProps.history.push(`/n/teacher/${this.props.currentUser.id}`);
       } else {
         this.props.ownProps.history.push(`/n/admin/${this.props.currentUser.id}`);
