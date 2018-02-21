@@ -16,5 +16,9 @@ class Student < ApplicationRecord
   through: :attendances,
   source: :course
 
+  def self.get_students_in_course(id)
+    course = Course.where(id: id.to_i).first
+    course.students
+  end
 
 end

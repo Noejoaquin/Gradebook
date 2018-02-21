@@ -1,7 +1,7 @@
 class Api::StudentsController < ApplicationController
 
   def index
-    debugger
+    @students = Student.get_students_in_course(params[:data])
   end
 
 

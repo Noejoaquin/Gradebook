@@ -22,7 +22,7 @@ export const fetchCourses = (data) => (dispatch) => {
 
 export const fetchCourse = (id) => (dispatch) => {
   return APIUtil.getCourse(id)
-                 .then((course) => dispatch(receiveCourses(course)),
+                 .then((course) => dispatch(receiveCourse(course)),
                   (errors) => dispatch(receiveErrors(errors.responseJSON))
                 );
 };
