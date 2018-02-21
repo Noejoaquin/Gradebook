@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import CourseProfile from "./teacher_profile";
 // import { fetchCourse } from '../../actions/course_actions';
-// import { fetchStudents } from '../../actions/course_actions';
+import { fetchStudents } from '../../actions/student_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let id = ownProps.split('/')[2]
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    
+
   };
 };
 

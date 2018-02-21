@@ -5,3 +5,11 @@ export const getCourses = (data) => (
     data: {data}
   })
 )
+
+export const getCourse = (id) => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/course',
+    data: {id}
+  })
+)
