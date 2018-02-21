@@ -9,9 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   var currentUser = state.session.currentUser;
   var allCourses = Object.keys(state.entities.courses).map((id) => state.entities.courses[id])
   if (allCourses.length > 1) {
-    debugger
    courses = allCourses.filter((course) => {
-     // debugger
      return state.session.currentUser.courses.includes(course.id)
 
  })
