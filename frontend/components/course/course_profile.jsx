@@ -14,14 +14,15 @@ class CourseProfile extends React.Component {
   }
 
   showView(e){
-    e.currentTarget.classList.add('active')
+    e.currentTarget.childNodes[3].classList.remove('hidden')
+    e.currentTarget.childNodes[3].classList.add('active')
   }
 
   createStudentIndex(students){
      return students.map((student) => {
       return(
         <li onClick={this.showView} key={student.id}>{student.first_name} {student.last_name}
-          <div className='student-port'>{student.id}</div>
+          <div className='student-port hidden'>{student.id}</div>
         </li>
       )
     })
