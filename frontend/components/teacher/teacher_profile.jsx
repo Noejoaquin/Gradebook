@@ -19,6 +19,7 @@ class TeacherProfile extends React.Component {
           key={course.id}
           name={course.name}
           overallGrade={course.overall_grade}
+          id={course.id}
         />
       );
     });
@@ -31,8 +32,11 @@ class TeacherProfile extends React.Component {
       courses = this.createCourseList(this.props.courses);
     }
     return (
-      <div>
-        TeacherProfile
+      <div className='profile-container'>
+        <div className='teacher-greeting-contaner'>
+          <h1 className='greeting-message'></h1>
+          <h2>Your Class List is Below</h2>
+        </div>
         <ul>{courses}</ul>
       </div>
     );
