@@ -5,6 +5,7 @@ class CourseProfile extends React.Component {
     super(props);
     this.createStudentIndex = this.createStudentIndex.bind(this)
     this.showView = this.showView.bind(this)
+    this.activeTab;
   }
 
   componentDidMount() {
@@ -14,6 +15,11 @@ class CourseProfile extends React.Component {
   }
 
   showView(e){
+    if (this.activeTab ){
+      this.activeTab.childNodes[3].classList.add('hidden')
+      this.activeTab.childNodes[3].classList.remove('active')
+    }
+    this.activeTab = e.currentTarget
     e.currentTarget.childNodes[3].classList.remove('hidden')
     e.currentTarget.childNodes[3].classList.add('active')
   }
