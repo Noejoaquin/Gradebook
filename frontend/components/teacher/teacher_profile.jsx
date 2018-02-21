@@ -8,7 +8,7 @@ class TeacherProfile extends React.Component {
 
   componentDidMount() {
     if (this.props.courses.length === 0) {
-      this.props.fetchCourses();
+      this.props.fetchCourses({id:this.props.currentUser.id, role:this.props.currentUser.role});
     }
   }
 

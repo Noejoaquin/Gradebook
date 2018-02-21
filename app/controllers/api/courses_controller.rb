@@ -1,8 +1,7 @@
 class Api::CoursesController < ApplicationController
 
   def index
-    # debugger
-    @courses = Course.all
+    @courses = Course.find_courses(params[:data][:role], params[:data][:id])
   end
 
   def course_params

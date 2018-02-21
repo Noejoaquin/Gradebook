@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchCourses: () => dispatch(fetchCourses())
+    fetchCourses: (data) => dispatch(fetchCourses(data))
   };
 };
 
