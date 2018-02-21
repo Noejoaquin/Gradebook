@@ -13,7 +13,7 @@ const Auth = ({component: Component, path, loggedIn, currentUser}) => {
   } else if (currentUser) {
     nextPath = `/n/admin/${currentUser.id}`
   }
-  debugger
+  
   return (
   <Route path={path} render={(props) => (
     !loggedIn ? (

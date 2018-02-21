@@ -15,14 +15,14 @@ class SessionForm extends React.Component {
     };
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault()
     this.props.login(this.state)
   }
 
-  handleGuestTeacherLogin(){
-    this.setState({email: 'noe'})
-    this.setState({password:'starwars'})
-    this.props.login(this.state)
+  handleGuestTeacherLogin(e){
+    this.setState({email: 'noe', password:'starwars'})
+    this.handleSubmit
   }
 
   render() {
