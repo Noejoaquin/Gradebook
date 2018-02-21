@@ -7,13 +7,13 @@ class CourseProfile extends React.Component {
 
   componentDidMount() {
     debugger
-    this.props.fetchCourse(this.props.id) //.then(() => this.props.fetchStudents(this.props.id))
+    this.props.fetchCourse(this.props.id).then(() => this.props.fetchStudents(this.props.id))
   }
 
-  componentWillUpdate(){
-    debugger
-    this.props.fetchStudents(this.props.id)
-  }
+  // componentWillUpdate(){
+  //   debugger
+  //   this.props.fetchStudents(this.props.id)
+  // }
 
   render() {
 
