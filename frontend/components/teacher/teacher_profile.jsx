@@ -1,29 +1,41 @@
 import React from "react";
-
+import { TeacherCourseIndexItem } from "./teacher_course_index_item";
 class TeacherProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.courses = this.props.courses
+    this.courses = this.props.courses;
   }
 
-  componentDidMount(){
-    if (this.props.courses.length === 0){
-      this.props.fetchCourses()
+  componentDidMount() {
+    if (this.props.courses.length === 0) {
+      this.props.fetchCourses();
     }
+  }
+
+  createCourseList(courses) {
+    let list = courses.map(course => {
+      return (
+        <TeacherCourseIndexItem
+          key={course.id}
+          name={course.name}
+          overallGrade={course.overall_grade}
+        />
+      );
+    });
+    return list;
   }
 
   render() {
-    let course;
-    if (this.props.courses.length !== 0){
-      debugger
-      course = <li>{this.props.courses[0].name}</li>
+    let courses;
+    if (this.props.courses.length !== 0) {
+      courses = this.createCourseList(this.props.courses);
     }
-    return(
+    return (
       <div>
         TeacherProfile
-        {course}
+        <ul>{courses}</ul>
       </div>
-    )
+    );
   }
 }
 
