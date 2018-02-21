@@ -41,6 +41,9 @@ Admin.create!(title: 'Dean of Admissions', user_id: user3.id)
 
 Course.destroy_all
 course1 = Course.create!(name: 'English Literature 101', teacher_id: teacher1.id)
+course2 = Course.create!(name: 'Philosophy of Early 19th Century Russian Literature', teacher_id: teacher1.id)
+course3 = Course.create!(name: 'Shakespeare\'s Ghost', teacher_id: teacher1.id)
+course4 = Course.create!(name: 'American Poetry', teacher_id: teacher1.id)
 
 Attendance.destroy_all
 Attendance.create!(student_id: student1.id, course_id:course1.id)

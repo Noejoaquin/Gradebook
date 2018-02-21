@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 import Redirect from 'react-router-dom';
 
 export const TeacherCourseIndexItem = ({name, overallGrade, id}) =>{
-  
   return (
-    <Link to={`/n/course/${id}`}><ul className='course-item'>
-      <li>
+    <li className='course-item'><Link to={`/n/course/${id}`}>
+      <div>
         {name}
-      </li>
-      <li>
+      </div>
+      <div>
         Overall Grade: {overallGrade}
-      </li>
-    </ul></Link>
+      </div>
+      <div>
+        Number of Students:
+      </div>
+    </Link></li>
   )
 }

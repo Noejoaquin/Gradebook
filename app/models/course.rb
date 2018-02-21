@@ -18,7 +18,7 @@ class Course < ApplicationRecord
     if role == 'teacher'
       teacher = Teacher.where(user_id: id).first
       courses = teacher.courses
-    elsif role = 'student'
+    elsif role == 'student'
       student = Student.where(user_id: id).first
       courses = student.courses
     else
