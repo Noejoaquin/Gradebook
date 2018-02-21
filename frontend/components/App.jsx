@@ -1,12 +1,10 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import SessionFormContainer from "./session/session_form_container";
-// import HomeRouterContainer from "./routing/home_router_container";
 import TeacherProfileContainer from "./teacher/teacher_profile_container";
 import CourseProfileContainer from './course/course_profile_container';
 import NavContainer from "./nav/nav_container";
 import { AuthRoute } from "../util/route_util";
-// <Route exact path="/home" component={HomeRouterContainer} />
 
 const App = () => (
   <div className='app'>
