@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import CourseProfile from "./teacher_profile";
+import CourseProfile from "./course_profile";
 import { fetchCourse } from '../../actions/course_actions';
 import { fetchStudents } from '../../actions/student_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let id = ownProps.split('/')[2]
+  let id = parseInt(ownProps.location.pathname.split('/')[3])
   let course = state.entities.courses.id
   let students = Object.keys(state.entities.students).map((id) => state.entities.students[id])
 

@@ -5,7 +5,7 @@ class Api::CoursesController < ApplicationController
   end
 
   def show
-    @course = Course.find(params[:data][:id])
+    @course = Course.find(params[:id])
   end
 
   def course_params

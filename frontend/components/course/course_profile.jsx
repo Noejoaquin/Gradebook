@@ -6,7 +6,13 @@ class CourseProfile extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCourse().then(() => this.props.fetchStudents(this.props.id))
+    debugger
+    this.props.fetchCourse(this.props.id) //.then(() => this.props.fetchStudents(this.props.id))
+  }
+
+  componentWillUpdate(){
+    debugger
+    this.props.fetchStudents(this.props.id)
   }
 
   render() {
@@ -19,4 +25,4 @@ class CourseProfile extends React.Component {
   }
 }
 
-export default TeacherProfile;
+export default CourseProfile;

@@ -16,7 +16,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit() {
-    this.props.login(this.state);
+    this.props.login(this.state)
   }
 
   handleGuestTeacherLogin(){

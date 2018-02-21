@@ -4,18 +4,29 @@ import { connect } from 'react-redux';
 import {Route, Redirect, withRouter}  from 'react-router-dom';
 
 
-const Auth = ({component: Component, path, loggedIn}) => (
+const Auth = ({component: Component, path, loggedIn, currentUser}) => {
+  let nextPath;
+  if ( currentUser && currentUser.role === 'teacher'){
+    nextPath = `/n/teacher/${currentUser.id}`
+  } else if (currentUser && currentUser.role === 'student'){
+    nextPath = `/n/student/${currentUser.id}`
+  } else if (currentUser) {
+    nextPath = `/n/admin/${currentUser.id}`
+  }
+  debugger
+  return (
   <Route path={path} render={(props) => (
     !loggedIn ? (
       <Component {...props} />
     ) : (
       <Redirect to={
-          '/home'
+          nextPath
         }
          />
     )
   )}/>
-);
+  )
+};
 
 const Protected = ({component: Component, path, loggedIn}) => {
   return (
@@ -32,6 +43,7 @@ const Protected = ({component: Component, path, loggedIn}) => {
 const mapStateToProps = state => {
   return {
     loggedIn: Boolean(state.session.currentUser),
+    currentUser: state.session.currentUser
   };
 }
 

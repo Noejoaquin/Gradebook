@@ -5,9 +5,12 @@ import TeacherProfile from "./teacher_profile";
 import { fetchCourses } from '../../actions/course_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  let courses =[];
   let currentUser = state.session.currentUser;
   let allCourses= Object.keys(state.entities.courses).map((id) => state.entities.courses[id])
-  let courses = allCourses.filter((course) => state.session.currentUser.courses.includes(course.id))
+  if (allCourses.length > 0){
+   courses = allCourses.filter((course) => state.session.currentUser.courses.includes(course.id))
+  }
   return {
     currentUser,
     courses
