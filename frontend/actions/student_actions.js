@@ -1,4 +1,4 @@
-import * as APIUtil from "../util/course_api_util";
+import * as APIUtil from "../util/student_api_util";
 
 export const RECEIVE_STUDENTS = 'RECEIVE_STUDENTS';
 
