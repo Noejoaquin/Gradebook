@@ -34,10 +34,10 @@ class TeacherProfile extends React.Component {
     return (
       <div className='profile-container'>
         <div className='teacher-greeting-contaner'>
-          <h1 className='greeting-message'></h1>
-          <h2>Your Class List is Below</h2>
+          <h1 className='greeting-message-1'>Welcome {this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
+          <h2 className='greeting-message-2'>Your Class List is Below</h2>
         </div>
-        <ul>{courses}</ul>
+        <ul className='course-index'>{courses}</ul>
       </div>
     );
   }

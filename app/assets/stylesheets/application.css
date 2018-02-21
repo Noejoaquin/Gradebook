@@ -16,3 +16,4 @@
 @import './base/reset';
 @import './components/session_login';
 @import './components/nav_bar';
+@import './components/teacher_profile';
