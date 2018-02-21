@@ -1,4 +1,4 @@
-import { RECEIVE_STUDENTS } from '../actions/course_actions';
+import { RECEIVE_STUDENTS } from '../actions/student_actions';
 import merge from 'lodash/merge';
 
 

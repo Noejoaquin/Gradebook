@@ -8,7 +8,7 @@ export const receiveStudents = (courses) => ({
 });
 
 export const fetchStudents = (data) => (dispatch) => {
-  return APIUtil.getCourses(data)
+  return APIUtil.getStudents(data)
                  .then((students) => dispatch(receiveCourses(students)),
                   (errors) => dispatch(receiveErrors(errors.responseJSON))
                 );
