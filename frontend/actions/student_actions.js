@@ -21,8 +21,8 @@ export const fetchStudents = (courseId) => (dispatch) => {
 };
 
 
-export const updateStudentGrade = (studentId, grade, courseId) => (dispatch) => {
-  return APIUtil.updateStudentGrade(studentId, grade, courseId)
+export const updateStudentGrade = (data) => (dispatch) => {
+  return APIUtil.updateStudentGrade(data)
                 .then((student) => dispatch(receiveStudent(student)),
                  (errors) => dispatch(receiveErrors(errors.responseJSON))
                );

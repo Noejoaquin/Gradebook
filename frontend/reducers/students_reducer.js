@@ -7,7 +7,7 @@ const StudentsReducer = (state = {}, action) => {
     case RECEIVE_STUDENTS:
       return action.students;
     case RECEIVE_STUDENT:
-      return merge({}, state, { [action.course.id]: action.course });
+      return merge({}, state, { [action.student.id]: action.student });
     default:
       return state;
   }

@@ -6,10 +6,10 @@ export const getStudents = (courseId) => (
   })
 )
 
-export const updateStudentGrade = (studentId, grade, courseId) => (
+export const updateStudentGrade = (data) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/students/${studentId}`,
-    data: {studentId, grade, courseId}
+    url: `/api/students/${data.studentId}`,
+    data: {data}
   })
 )

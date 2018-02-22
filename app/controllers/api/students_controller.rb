@@ -6,11 +6,12 @@ class Api::StudentsController < ApplicationController
   end
 
   def update
-    debugger
-    # StudentGrade.update(grade: params[grade])
-    StudentGrade.where(course_id: params[:courseId]).where(studentId: params[:studentId]).update(grade: params[grade])
-    @grade = StudentGrade.where(course_id: params[:courseId]).where(studentId: params[:studentId])
-    @student = Student.where(student_id: params[:studentId])
+    course_id = params[:data][:courseId].to_i
+    student_id = params[:data][:studentId].to_i
+    grade = StudentGrade.where(course_id: course_id).where(student_id: student_id).first
+    grade.update(grade: params[:data][:grade])
+    @grade = StudentGrade.where(course_id: course_id).where(student_id: student_id).first.grade
+    @student = Student.where(id: student_id).first
     render :show
   end
 

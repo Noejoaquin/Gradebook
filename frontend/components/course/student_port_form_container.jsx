@@ -6,7 +6,7 @@ import { updateStudentGrade } from '../../actions/student_actions';
 const mapStateToProps = (state, ownProps) => {
   let studentId = ownProps.studentId
   let grade = ownProps.grade
-  let courseId
+  let courseId = ownProps.courseId
   return {
     studentId,
     grade,
