@@ -14,6 +14,11 @@ class Course < ApplicationRecord
   through: :attendees,
   source: :student
 
+  has_many :student_grades,
+  primary_key: :id,
+  class_name: 'StudentGrade',
+  foreign_key: :course_id
+
   def self.find_courses(role, id)
     if role == 'teacher'
       teacher = Teacher.where(user_id: id).first
