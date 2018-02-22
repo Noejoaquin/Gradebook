@@ -5,3 +5,11 @@ export const getStudents = (courseId) => (
     data: {courseId}
   })
 )
+
+export const updateStudentGrade = (studentId, grade, courseId) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/students/${studentId}`,
+    data: {studentId, grade, courseId}
+  })
+)

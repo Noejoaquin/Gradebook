@@ -1,3 +1,4 @@
+
 @students.each do |student|
   student_grade = @student_grades.select{ |grade| grade.student_id == student.id}.first
   json.set! student.user_id do

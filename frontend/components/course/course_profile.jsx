@@ -6,9 +6,8 @@ class CourseProfile extends React.Component {
     super(props);
     this.createStudentIndex = this.createStudentIndex.bind(this)
     this.showView = this.showView.bind(this)
-    // this.handleGradeChange = this.handleGradeChange.bind(this)
-    // this.state = {}
     this.activeTab;
+    this.courseId = this.props.id
   }
 
   componentDidMount() {
@@ -28,10 +27,10 @@ class CourseProfile extends React.Component {
   }
 
   // handleGradeChange(id){
-  //   // debugger
+  //   //
   //   return (e) => {
   //   this.setState({ [id]: e.target.value })
-  //   debugger
+  //
   //  }
   // }
 
@@ -50,10 +49,11 @@ class CourseProfile extends React.Component {
   // }
 
   createStudentIndex(students){
+    debugger
      return students.map((student) => {
       return(
         <li onClick={this.showView} key={student.id}>{student.first_name} {student.last_name}
-          <StudentPortFormContainer  studentId={student.id} grade={student.grade} />
+          <StudentPortFormContainer  courseId={this.courseId} studentId={student.id} grade={student.grade} />
         </li>
       )
     })
@@ -64,7 +64,7 @@ class CourseProfile extends React.Component {
     if (this.props.students) {
       students = this.createStudentIndex(this.props.students)
     }
-    debugger
+
     return (
       <div className='course-profile-container'>
         COURSE PROFILE
