@@ -26,7 +26,7 @@ class StudentPortForm extends React.Component {
     }
     //
     return (
-      <form   className='student-port hidden'>
+      <form className='student-port hidden'>
         <input onChange={this.handleGradeChange}value={this.state.grade}></input>
         { button }
       </form>
