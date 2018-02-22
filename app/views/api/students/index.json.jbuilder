@@ -5,6 +5,6 @@
     json.first_name student.user.first_name
     json.last_name student.user.last_name
     json.gpa student.gpa
-    json.id student.user_id
+    json.id student.id
   end
 end
