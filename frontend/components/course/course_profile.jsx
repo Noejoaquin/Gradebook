@@ -5,7 +5,7 @@ class CourseProfile extends React.Component {
   constructor(props) {
     super(props);
     this.createStudentIndex = this.createStudentIndex.bind(this)
-    this.showView = this.showView.bind(this)
+    // this.showView = this.showView.bind(this)
     this.activeTab;
     this.courseId = this.props.id
     this.createStudentViewPorts = this.createStudentViewPorts.bind(this)
@@ -63,11 +63,13 @@ class CourseProfile extends React.Component {
     return (
       <div className='course-profile-container'>
         {title}
-       <ul className='profile-index student-index'>
-         {students}
-       </ul>
-       {this.state.content}
-      </div>
+        <div className='index-port-container'>
+          <ul className='profile-index student-index'>
+            {students}
+          </ul>
+          {this.state.content}
+        </div>
+        </div>
     );
   }
 }

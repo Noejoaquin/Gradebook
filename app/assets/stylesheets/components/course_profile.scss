@@ -12,20 +12,22 @@
   font-size: 38px;
 }
 
+.student-index {
+  width:300px;
+
+}
+
 .student-index-item {
+  width:300px;
 }
-
-.active {
-  visibility: visible;
-  position: absolute;
+.index-port-container {
+  display:flex;
+  justify-content: space-between;
 }
-
-.hidden {
-  visibility: hidden;
-}
-
-.port-form {
-  height:20px;
-  width:20px;
+.student-port {
+  height:300px;
+  width:300px;
   border:1px solid red;
+  margin-top:15px;
+  margin-left: 10px;
 }
