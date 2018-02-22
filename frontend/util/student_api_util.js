@@ -1,7 +1,7 @@
-export const getStudents = (data) => (
+export const getStudents = (courseId) => (
   $.ajax({
     method: 'GET',
     url: '/api/students',
-    data: {data}
+    data: {courseId}
   })
 )
