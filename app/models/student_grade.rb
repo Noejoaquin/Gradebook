@@ -3,7 +3,7 @@ class StudentGrade < ApplicationRecord
   belongs_to :student,
   primary_key: :id,
   class_name: 'Student',
-  foreign_key: :user_id
+  foreign_key: :student_id
 
   belongs_to :course,
   primary_key: :id,

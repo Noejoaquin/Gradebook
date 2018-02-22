@@ -19,7 +19,7 @@ class Student < ApplicationRecord
   has_many :grades,
   primary_key: :id,
   class_name: 'StudentGrade',
-  foreign_key: :user_id
+  foreign_key: :student_id
 
   def self.get_students_in_course(id)
     course = Course.where(id: id.to_i).first
