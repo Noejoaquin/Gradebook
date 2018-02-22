@@ -1,12 +1,13 @@
 import React from "react";
+import StudentPortFormContainer from './student_port_form_container';
 
 class CourseProfile extends React.Component {
   constructor(props) {
     super(props);
     this.createStudentIndex = this.createStudentIndex.bind(this)
     this.showView = this.showView.bind(this)
-    this.handleGradeChange = this.handleGradeChange.bind(this)
-    this.state = {}
+    // this.handleGradeChange = this.handleGradeChange.bind(this)
+    // this.state = {}
     this.activeTab;
   }
 
@@ -26,23 +27,33 @@ class CourseProfile extends React.Component {
     e.currentTarget.childNodes[3].classList.add('active')
   }
 
-  handleGradeChange(id){
-    // debugger
-    return (e) => {
-    this.setState({ [id]: e.target.value })
-    debugger
-   }
-  }
+  // handleGradeChange(id){
+  //   // debugger
+  //   return (e) => {
+  //   this.setState({ [id]: e.target.value })
+  //   debugger
+  //  }
+  // }
+
+  // createStudentIndex(students){
+  //    return students.map((student) => {
+  //      this.state[student.id] = student.grade
+  //      let id = student.id
+  //     return(
+  //       <li onClick={this.showView} key={student.id}>{student.first_name} {student.last_name}
+  //         <form className='student-port hidden'>Student Grade:
+  //           <input key={student.id} onChange={this.handleGradeChange(student.id)} value={this.state[student.id]}></input>
+  //         </form>
+  //       </li>
+  //     )
+  //   })
+  // }
 
   createStudentIndex(students){
      return students.map((student) => {
-       this.state[student.id] = student.grade
-       let id = student.id
       return(
         <li onClick={this.showView} key={student.id}>{student.first_name} {student.last_name}
-          <form className='student-port hidden'>Student Grade:
-            <input key={student.id} onChange={this.handleGradeChange(student.id)} value={this.state[student.id]}></input>
-          </form>
+          <StudentPortFormContainer  studentId={student.id} grade={student.grade} />
         </li>
       )
     })
