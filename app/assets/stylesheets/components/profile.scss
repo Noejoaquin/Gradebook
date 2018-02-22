@@ -1,0 +1,32 @@
+.profile-container {
+  margin: 0 auto;
+  width: 580px;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #636664;
+}
+
+.profile-index {
+  margin-top: 15px;
+  border: 1px solid #636664;
+  flex-direction: column;
+}
+
+.profile-index-item {
+  width: 580px;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: .5px;
+  border-bottom: 1px solid #636664;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.profile-index-item:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #636664;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  transform: scale(1.05) perspective(1px);
+}

@@ -42,7 +42,7 @@ class TeacherProfile extends React.Component {
           {greeting}
           <h2 className='greeting-message-2'>Your Course List is Below</h2>
         </div>
-        <ul className='course-index'>
+        <ul className='profile-index'>
           {courses}
         </ul>
       </div>

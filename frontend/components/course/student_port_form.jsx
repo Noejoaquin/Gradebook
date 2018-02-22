@@ -24,9 +24,9 @@ class StudentPortForm extends React.Component {
     if (this.state.grade !== this.originalState.grade){
       button = <button onClick={this.changeGrade} >Update Student's Grade</button>
     }
-    //
+
     return (
-      <form className='student-port hidden'>
+      <form className='student-port'>
         <input onChange={this.handleGradeChange}value={this.state.grade}></input>
         { button }
       </form>

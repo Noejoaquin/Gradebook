@@ -6,7 +6,7 @@ import { fetchStudents } from '../../actions/student_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let id = parseInt(ownProps.location.pathname.split('/')[3])
-  let course = state.entities.courses.id
+  let course = state.entities.courses[id]
   let students = Object.keys(state.entities.students).map((id) => state.entities.students[id])
 
   return {

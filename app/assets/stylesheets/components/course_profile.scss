@@ -1,7 +1,31 @@
+.course-profile-container {
+  margin: 0 auto;
+  width: 580px;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #636664;
+}
+
+.course-title{
+  display: flex;
+  justify-content: center;
+  font-size: 38px;
+}
+
+.student-index-item {
+}
+
 .active {
   visibility: visible;
+  position: absolute;
 }
 
 .hidden {
   visibility: hidden;
+}
+
+.port-form {
+  height:20px;
+  width:20px;
+  border:1px solid red;
 }
