@@ -28,14 +28,16 @@ class Student < ApplicationRecord
 
   def self.update_grade(course_id, student_id, grade)
     course_id = course_id.to_i
-    student_id = student_id.to_i
-    student_grade = StudentGrade.where(course_id: course_id).where(student_id: student_id).first
+    student_id = student_id.to_i # userID
+    id = Student.where(user_id: student_id).first.id
+    student_grade = StudentGrade.where(course_id: course_id).where(student_id: id ).first
+    # debugger
     student_grade.update(grade: grade)
-    
+
     course = Course.find(course_id)
     Course.calculate_overall_grade(course)
 
-    students = Student.where(id: student_id)
+    students = Student.where(id: id)
     courses = students.first.courses
     grades = students.first.grades
     [students, courses, grades]
