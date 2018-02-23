@@ -8,13 +8,11 @@ class StudentProfile extends React.Component {
   }
 
   componentWillMount(){
-    debugger
     this.props.fetchStudent(this.props.id)
   }
 
   makeClassList(){
     let grade;
-    debugger
     return this.props.student.courses.map((course) => {
       grade = this.props.student.grades.filter(grade => grade.course_id === course.id)[0]
       return(
@@ -32,7 +30,6 @@ class StudentProfile extends React.Component {
     let title;
     let gpa;
     if (this.props.student && this.props.student.courses){
-      debugger
       classList = this.makeClassList()
       title = <h1 className='student-title'>{this.props.student.first_name} {this.props.student.last_name}</h1>
       gpa = <h2 className='student-gpa'>Overall Gpa: {this.props.student.gpa}</h2>
