@@ -8,15 +8,11 @@ class Api::StudentsController < ApplicationController
   def update
     # debugger
     if params[:data][:grade] == ''
-      render json: ['Grade cannot be empty'], status: 400
-      return
-    elsif !params[:data][:grade].is_a?(Integer)
-      debugger
       render json: ['Please input a number'], status: 400
       return
     end
 
-    debugger
+    # debugger
     course_id = params[:data][:courseId].to_i
     student_id = params[:data][:studentId].to_i
     grade = StudentGrade.where(course_id: course_id).where(student_id: student_id).first
