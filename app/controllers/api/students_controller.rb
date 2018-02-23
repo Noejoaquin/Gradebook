@@ -18,7 +18,7 @@ class Api::StudentsController < ApplicationController
     grade = StudentGrade.where(course_id: course_id).where(student_id: student_id).first
     grade.update(grade: params[:data][:grade])
     @grade = StudentGrade.where(course_id: course_id).where(student_id: student_id).first.grade
-    @student = Student.where(id: student_id).first
+    @students = Student.where(id: student_id)
     render :show
   end
 

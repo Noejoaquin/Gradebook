@@ -5,7 +5,6 @@ class CourseProfile extends React.Component {
   constructor(props) {
     super(props);
     this.createStudentIndex = this.createStudentIndex.bind(this)
-    // this.showView = this.showView.bind(this)
     this.activeTab;
     this.courseId = this.props.id
     this.createStudentViewPorts = this.createStudentViewPorts.bind(this)
