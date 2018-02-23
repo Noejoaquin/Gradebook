@@ -26,4 +26,13 @@ class Student < ApplicationRecord
     course.students
   end
 
+  def self.update_grade(course_id, student_id, grade)
+    course_id = course_id.to_i
+    student_id = student_id.to_i
+    student_grade = StudentGrade.where(course_id: course_id).where(student_id: student_id).first
+    student_grade.update(grade: grade)
+    students = Student.where(id: student_id)
+    [student_grade, students]
+  end
+
 end

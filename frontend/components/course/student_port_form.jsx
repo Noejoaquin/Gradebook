@@ -9,15 +9,20 @@ class StudentPortForm extends React.Component {
     this.updateStudentGrade = this.props.updateStudentGrade
     this.changeGrade = this.changeGrade.bind(this)
     this.constuctError = this.constuctError.bind(this)
+    this.updateButton = false
+    this.button;
   }
 
   handleGradeChange(e){
+    this.updateButton = true;
     this.setState({grade: e.target.value})
   }
 
   changeGrade(e){
     e.preventDefault()
     this.props.clearErrors()
+    this.button = null
+    this.updateButton = false
     this.updateStudentGrade(this.state)
   }
 
@@ -29,13 +34,17 @@ class StudentPortForm extends React.Component {
     }
   }
 
+  checkButton(){
+    if (this.updateButton){
+      this.button = <button className='update-button' onClick={this.changeGrade} >Update Student's Grade</button>
+    }
+  }
+
+
   render() {
     let button;
     let error = this.constuctError()
-
-    if (this.state.grade !== this.originalState.grade){
-      button = <button className='update-button' onClick={this.changeGrade} >Update Student's Grade</button>
-    }
+    this.checkButton()
 
     return (
       <form className='student-port'>
@@ -46,7 +55,7 @@ class StudentPortForm extends React.Component {
           <li className='grade-input-container'>
             <input type='number' onChange={this.handleGradeChange} className='grade-input' value={this.state.grade}></input> / 100
           </li>
-          { button }
+          { this.button }
         </div>
       </form>
     );

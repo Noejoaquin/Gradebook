@@ -11,14 +11,10 @@ class Api::StudentsController < ApplicationController
       render json: ['Please input a number'], status: 400
       return
     end
-
-    # debugger
-    course_id = params[:data][:courseId].to_i
-    student_id = params[:data][:studentId].to_i
-    grade = StudentGrade.where(course_id: course_id).where(student_id: student_id).first
-    grade.update(grade: params[:data][:grade])
-    @grade = StudentGrade.where(course_id: course_id).where(student_id: student_id).first.grade
-    @students = Student.where(id: student_id)
+    @grade, @students = Student.update_grade(params[:data][:courseId],
+                                            params[:data][:studentId],
+                                            params[:data][:grade]
+                                          )
     render :show
   end
 
