@@ -10,6 +10,7 @@ class Api::StudentsController < ApplicationController
     @students = Student.where(user_id: user_id)
     @courses = @students.first.courses
     @grades = @students.first.grades
+    Student.reset_gpa(user_id)
     render :show
   end
 

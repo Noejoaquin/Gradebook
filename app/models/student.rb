@@ -34,8 +34,14 @@ class Student < ApplicationRecord
     students = Student.where(id: student_id)
     courses = students.first.courses
     grades = students.first.grades
-    # [student_grade, students, courses, grades]
     [students, courses, grades]
+  end
+
+  def self.reset_gpa(id)
+    student = Student.where(user_id: id).first
+    grades = student.grades.map(&:grade)
+    gpa = ( (grades.reduce(:+)) / grades.count ) / 25.0
+    student.update(gpa: gpa)
   end
 
 end
