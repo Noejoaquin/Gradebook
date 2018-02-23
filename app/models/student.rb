@@ -31,6 +31,10 @@ class Student < ApplicationRecord
     student_id = student_id.to_i
     student_grade = StudentGrade.where(course_id: course_id).where(student_id: student_id).first
     student_grade.update(grade: grade)
+    
+    course = Course.find(course_id)
+    Course.calculate_overall_grade(course)
+
     students = Student.where(id: student_id)
     courses = students.first.courses
     grades = students.first.grades

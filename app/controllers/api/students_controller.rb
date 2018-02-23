@@ -15,7 +15,6 @@ class Api::StudentsController < ApplicationController
   end
 
   def update
-    # debugger
     if params[:data][:grade] == ''
       student_id = params[:data][:student_id]
       render json: ['Please input a number'], status: 400

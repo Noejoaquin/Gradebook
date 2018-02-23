@@ -30,4 +30,11 @@ class Course < ApplicationRecord
       courses = Course.all
     end
   end
+
+  def self.calculate_overall_grade(course)
+    grades = course.student_grades.map(&:grade)
+    return if grades.empty?
+    overall_grade = (grades.reduce(:+) / grades.count).round(2)
+    course.update(overall_grade: overall_grade)
+  end
 end

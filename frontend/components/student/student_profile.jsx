@@ -16,7 +16,7 @@ class StudentProfile extends React.Component {
     return this.props.student.courses.map((course) => {
       grade = this.props.student.grades.filter(grade => grade.course_id === course.id)[0]
       return(
-        <ul className='profile-index-item'>
+        <ul className='profile-index-item student-profile-index-item'>
           <li className='student-course-name'  key={course.id}>{course.name}</li>
           <li className='student-course-grade'>Grade: {grade.grade}</li>
         </ul>
