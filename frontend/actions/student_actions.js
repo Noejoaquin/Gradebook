@@ -2,11 +2,23 @@ import * as APIUtil from "../util/student_api_util";
 
 export const RECEIVE_STUDENTS = 'RECEIVE_STUDENTS';
 export const RECEIVE_STUDENT = 'RECEIVE_STUDENT';
+export const RECEIVE_STUDENT_ERRORS = 'RECEIVE_STUDENT_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const receiveStudents = (students) => ({
   type: RECEIVE_STUDENTS,
   students
 });
+
+export const receiveErrors = (errors) => ({
+  type: RECEIVE_STUDENT_ERRORS,
+  errors
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+})
+
 
 export const receiveStudent = (student) => ({
   type: RECEIVE_STUDENT,
