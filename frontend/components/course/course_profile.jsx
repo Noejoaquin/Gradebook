@@ -19,16 +19,6 @@ class CourseProfile extends React.Component {
     })
   }
 
-  // showView(e){
-  //   if (this.activeTab ){
-  //     this.activeTab.childNodes[3].classList.add('hidden')
-  //     this.activeTab.childNodes[3].classList.remove('active')
-  //   }
-  //   this.activeTab = e.currentTarget
-  //   e.currentTarget.childNodes[3].classList.remove('hidden')
-  //   e.currentTarget.childNodes[3].classList.add('active')
-  // }
-
   selectViewPort(id){
     let content = this.viewPorts.filter((port) => eval(port.key) === id)[0]
     this.setState({content})
@@ -45,7 +35,7 @@ class CourseProfile extends React.Component {
   createStudentViewPorts(students){
     return students.map((student) => {
      return(
-       <StudentPortFormContainer key={student.id} className='port-form' courseId={this.courseId} studentId={student.id} grade={student.grade} />
+       <StudentPortFormContainer firstName={student.first_name} lastName={student.last_name} key={student.id} className='port-form' courseId={this.courseId} studentId={student.id} grade={student.grade} />
      )
     })
   }
@@ -54,10 +44,14 @@ class CourseProfile extends React.Component {
     let students;
     let title;
     let viewPorts;
+    let emptyViewPortMessage;
     if (this.props.students && this.props.course) {
       title = <h1 className='course-title'>{this.props.course.name}</h1>
       students = this.createStudentIndex(this.props.students)
       this.viewPorts = this.createStudentViewPorts(this.props.students)
+    }
+    if (this.state.content === ''){
+      emptyViewPortMessage = <li id='empty-message' className='empty-view-port-message'>There is no student selected</li>
     }
 
     return (
@@ -67,7 +61,10 @@ class CourseProfile extends React.Component {
           <ul className='profile-index student-index'>
             {students}
           </ul>
-          {this.state.content}
+          <div className='student-port-container'>
+            {emptyViewPortMessage}
+            {this.state.content}
+          </div>
         </div>
         </div>
     );

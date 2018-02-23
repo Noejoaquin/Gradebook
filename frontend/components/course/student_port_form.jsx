@@ -22,13 +22,19 @@ class StudentPortForm extends React.Component {
   render() {
     let button;
     if (this.state.grade !== this.originalState.grade){
-      button = <button onClick={this.changeGrade} >Update Student's Grade</button>
+      button = <button className='update-button' onClick={this.changeGrade} >Update Student's Grade</button>
     }
 
     return (
       <form className='student-port'>
-        <input onChange={this.handleGradeChange}value={this.state.grade}></input>
-        { button }
+        <div className='form-content'>
+          <h1 className='student-form-name'>{this.props.firstName} {this.props.lastName}</h1>
+          <h3 className='current-grade-label'>Current Grade:</h3>
+          <li className='grade-input-container'>
+            <input onChange={this.handleGradeChange} className='grade-input' value={this.state.grade}></input> / 100
+          </li>
+          { button }
+        </div>
       </form>
     );
   }

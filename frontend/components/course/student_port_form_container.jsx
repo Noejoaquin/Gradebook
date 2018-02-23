@@ -7,10 +7,14 @@ const mapStateToProps = (state, ownProps) => {
   let studentId = ownProps.studentId
   let grade = ownProps.grade
   let courseId = ownProps.courseId
+  let firstName = ownProps.firstName
+  let lastName = ownProps.lastName
   return {
     studentId,
     grade,
-    courseId
+    courseId,
+    firstName,
+    lastName
   };
 };
 
