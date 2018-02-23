@@ -14,10 +14,13 @@
 
 .student-index {
   width:300px;
+  height: 300px;
+  overflow-x:hidden;
+  overflow-y: scroll;
 }
 
 .student-index-item {
-  width:300px;
+  width:270px;
 }
 .index-port-container {
   display:flex;

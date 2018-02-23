@@ -21,6 +21,7 @@ class CourseProfile extends React.Component {
   selectViewPort(id){
     let content = this.viewPorts.filter((port) => eval(port.key) === id)[0]
     this.setState({content})
+    this.props.clearErrors()
   }
 
   createStudentIndex(students){

@@ -8,6 +8,7 @@ class Api::StudentsController < ApplicationController
   def update
     # debugger
     if params[:data][:grade] == ''
+      student_id = params[:data][:student_id]
       render json: ['Please input a number'], status: 400
       return
     end
