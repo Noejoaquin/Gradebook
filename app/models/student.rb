@@ -32,7 +32,10 @@ class Student < ApplicationRecord
     student_grade = StudentGrade.where(course_id: course_id).where(student_id: student_id).first
     student_grade.update(grade: grade)
     students = Student.where(id: student_id)
-    [student_grade, students]
+    courses = students.first.courses
+    grades = students.first.grades
+    # [student_grade, students, courses, grades]
+    [students, courses, grades]
   end
 
 end

@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = { email: "", password: "" };
     this.handleGuestTeacherLogin = this.handleGuestTeacherLogin.bind(this);
+    this.handleGuestStudentLogin = this.handleGuestStudentLogin.bind(this);
   }
 
   handleChange(field) {
@@ -23,6 +24,10 @@ class SessionForm extends React.Component {
   handleGuestTeacherLogin(e){
     this.setState({email: 'noe', password:'starwars'})
     this.handleSubmit
+  }
+
+  handleGuestStudentLogin(e){
+    this.setState({email: 'Michael', password:'starwars'})
   }
 
   render() {
@@ -67,6 +72,8 @@ class SessionForm extends React.Component {
                 <button className='login-button login' onSubmit={this.handleSubmit}>login</button>
                 <br/>
                 <button className='login-button teacher-login' onClick={this.handleGuestTeacherLogin}>Guest Teacher Login</button>
+                <br/>
+                <button className='login-button teacher-login' onClick={this.handleGuestStudentLogin}>Guest Student Login</button>
             </form>
           </div>
         </div>

@@ -5,8 +5,8 @@ import { updateStudentGrade, clearErrors } from '../../actions/student_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let studentId = ownProps.studentId
-  let grade = ownProps.grade
   let courseId = ownProps.courseId
+  let grade = ownProps.grades.filter((grade) => grade.course_id === courseId)[0].grade
   let firstName = ownProps.firstName
   let lastName = ownProps.lastName
   let errors = state.errors.student

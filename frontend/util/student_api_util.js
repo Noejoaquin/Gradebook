@@ -6,6 +6,14 @@ export const getStudents = (courseId) => (
   })
 )
 
+export const getStudent = (userId) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/students/${userId}`,
+    data: {userId}
+  })
+)
+
 export const updateStudentGrade = (data) => (
   $.ajax({
     method: 'PATCH',

@@ -35,7 +35,7 @@ class CourseProfile extends React.Component {
   createStudentViewPorts(students){
     return students.map((student) => {
      return(
-       <StudentPortFormContainer firstName={student.first_name} lastName={student.last_name} key={student.id} className='port-form' courseId={this.courseId} studentId={student.id} grade={student.grade} />
+       <StudentPortFormContainer firstName={student.first_name} lastName={student.last_name} key={student.id} className='port-form' courseId={this.courseId} studentId={student.id} grades={student.grades} />
      )
     })
   }

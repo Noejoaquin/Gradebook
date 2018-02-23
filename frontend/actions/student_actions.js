@@ -32,6 +32,13 @@ export const fetchStudents = (courseId) => (dispatch) => {
                 );
 };
 
+export const fetchStudent = (userId) => (dispatch) => {
+  return APIUtil.getStudent(userId)
+                 .then((student) => dispatch(receiveStudent(student)),
+                  (errors) => dispatch(receiveErrors(errors.responseJSON))
+                );
+};
+
 
 export const updateStudentGrade = (data) => (dispatch) => {
   return APIUtil.updateStudentGrade(data)
