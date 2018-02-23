@@ -1,0 +1,22 @@
+.student-profile-container{
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #636664;
+}
+
+.student-title, .student-gpa {
+  display:flex;
+  justify-content: center;
+  font-size: 38px;
+  margin-top: 20px;
+}
+
+.student-gpa {
+  font-size: 28px;
+}
+.course-list-container{
+  margin-top: 40px;
+}
+
+.profile-index-item{
+  pointer-events: none;
+}

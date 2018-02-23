@@ -16,6 +16,7 @@
 @import './base/reset';
 @import './components/session_login';
 @import './components/nav_bar';
-@import './components/profile.scss'
+@import './components/profile.scss';
 @import './components/teacher_profile';
 @import './components/course_profile';
+@import './components/student_profile';

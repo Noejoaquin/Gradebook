@@ -16,8 +16,8 @@ class StudentProfile extends React.Component {
     return this.props.student.courses.map((course) => {
       grade = this.props.student.grades.filter(grade => grade.course_id === course.id)[0]
       return(
-        <ul>
-          <li className='profile-index-item student-index-item'  key={course.id}>{course.name}</li>
+        <ul className='profile-index-item'>
+          <li className='student-course-name'  key={course.id}>{course.name}</li>
           <li className='student-course-grade'>Grade: {grade.grade}</li>
         </ul>
 
@@ -28,15 +28,17 @@ class StudentProfile extends React.Component {
   render() {
     let classList;
     let title;
+    let gpa;
     if (this.props.student){
       classList = this.makeClassList()
       title = <h1 className='student-title'>{this.props.student.first_name} {this.props.student.last_name}</h1>
+      gpa = <h2 className='student-gpa'>Overall Gpa: {this.props.student.gpa}</h2>
     }
     return (
-      <div>
-        STUDENT PROFILE
+      <div className='student-profile-container'>
         {title}
-        <ul className='profile-index'>
+        {gpa}
+        <ul className='profile-container course-list-container'>
           {classList}
         </ul>
       </div>
