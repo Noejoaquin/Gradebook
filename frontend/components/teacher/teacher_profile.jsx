@@ -20,6 +20,7 @@ class TeacherProfile extends React.Component {
           name={course.name}
           overallGrade={course.overall_grade}
           id={course.id}
+          numberOfSudents={course.number_of_students}
         />
       );
     });
