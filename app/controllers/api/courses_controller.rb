@@ -1,7 +1,12 @@
 class Api::CoursesController < ApplicationController
 
   def index
-    @courses = Course.find_courses(params[:data][:role], params[:data][:id])
+    if params[:data][:role] == 'teacher'
+      @courses = Course.find_courses(params[:data][:role], params[:data][:id])
+    else
+      # debugger
+      @courses = Course.all
+    end
     @courses.each do |course|
       Course.calculate_overall_grade(course)
     end

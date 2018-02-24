@@ -7,12 +7,13 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.courses.length === 0 && this.props.currentUser !== null) {
+    if (this.props.currentUser !== null) {
       this.props.fetchCourses({id:this.props.currentUser.id, role:this.props.currentUser.role});
     }
   }
 
   createCourseList(courses) {
+    debugger
     let list = courses.map(course => {
       return (
         <CourseIndexItem
@@ -30,18 +31,25 @@ class Profile extends React.Component {
   render() {
     let courses;
     let greeting;
+    let greeting2;
     if (this.props.courses.length !== 0) {
       courses = this.createCourseList(this.props.courses);
     }
 
     if (this.props.currentUser !== null) {
       greeting = <h1 className='greeting-message-1'>Welcome {this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
+      if (this.props.currentUser.role === 'teacher'){
+        greeting2 = <h2 className='greeting-message-2'>Your Course List is Below</h2>
+      } else {
+        greeting2 = <h2 className='greeting-message-2'>All Courses are Listed Below</h2>
+      }
     }
+    debugger
     return (
       <div className='profile-container'>
         <div className='teacher-greeting-contaner'>
           {greeting}
-          <h2 className='greeting-message-2'>Your Course List is Below</h2>
+          {greeting2}
         </div>
         <ul className='profile-index'>
           {courses}

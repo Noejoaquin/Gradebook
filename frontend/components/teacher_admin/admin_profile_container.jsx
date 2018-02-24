@@ -6,7 +6,7 @@ import { fetchCourses } from '../../actions/course_actions';
 const mapStateToProps = (state, ownProps) => {
   var courses =[];
   var currentUser = state.session.currentUser;
-  var allCourses = Object.keys(state.entities.courses).map((id) => state.entities.courses[id])
+  var courses = Object.keys(state.entities.courses).map((id) => state.entities.courses[id])
   return {
     currentUser,
     courses
