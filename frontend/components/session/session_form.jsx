@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
     this.state = { email: "", password: "" };
     this.handleGuestTeacherLogin = this.handleGuestTeacherLogin.bind(this);
     this.handleGuestStudentLogin = this.handleGuestStudentLogin.bind(this);
+    this.handleGuestAdminLogin = this.handleGuestAdminLogin.bind(this);
   }
 
   handleChange(field) {
@@ -28,6 +29,11 @@ class SessionForm extends React.Component {
 
   handleGuestStudentLogin(e){
     this.setState({email: 'Michael', password:'starwars'})
+    this.handleSubmit
+  }
+
+  handleGuestAdminLogin(){
+    // this.see
   }
 
   render() {

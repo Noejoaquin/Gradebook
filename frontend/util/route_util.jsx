@@ -13,7 +13,7 @@ const Auth = ({component: Component, path, loggedIn, currentUser}) => {
   } else if (currentUser) {
     nextPath = `/n/admin/${currentUser.id}`
   }
-  
+
   return (
   <Route path={path} render={(props) => (
     !loggedIn ? (
@@ -28,15 +28,17 @@ const Auth = ({component: Component, path, loggedIn, currentUser}) => {
   )
 };
 
-const Protected = ({component: Component, path, loggedIn}) => {
+const Protected = ({component: Component, path, loggedIn, currentUser}) => {
   return (
-  <Route path={path} render={(props) => (
-    loggedIn ? (
-      <Component {...props} />
-    ) : (
-      <Redirect to="/" />
-    )
-  )}/>
+  <Route path={path} render={(props) => {
+      if (loggedIn && currentUser.role !== 'student'){
+        return <Component {...props} />
+      } else if (loggedIn){
+        return <Redirect to={`/n/student/${currentUser.id}`} />
+      } else {
+        return <Redirect to='/' />
+      }
+  }}/>
 )};
 
 

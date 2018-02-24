@@ -14,7 +14,7 @@ const App = () => (
       <AuthRoute exact path="/" component={SessionFormContainer} />
       <ProtectedRoute exact path="/n/teacher/:id" component={TeacherProfileContainer} />
       <ProtectedRoute exact path='/n/course/:id' component={CourseProfileContainer} />
-      <ProtectedRoute exact path='/n/student/:id' component={StudentProfileContainer} />
+      <Route exact path='/n/student/:id' component={StudentProfileContainer} />
     </Switch>
   </div>
 );
