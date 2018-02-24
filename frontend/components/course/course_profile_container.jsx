@@ -8,11 +8,12 @@ const mapStateToProps = (state, ownProps) => {
   let id = parseInt(ownProps.location.pathname.split('/')[3])
   let course = state.entities.courses[id]
   let students = Object.keys(state.entities.students).map((id) => state.entities.students[id])
-
+  let currentUser = state.session.currentUser
   return {
     id,
     course,
-    students
+    students,
+    currentUser
   };
 };
 

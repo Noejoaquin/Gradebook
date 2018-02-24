@@ -44,19 +44,22 @@ class CourseProfile extends React.Component {
     let students;
     let title;
     let viewPorts;
+    let teacher;
     let emptyViewPortMessage;
-    if (this.props.students && this.props.course) {
+    if (this.props.students && this.props.course && this.props.currentUser) {
       title = <h1 className='course-title'>{this.props.course.name}</h1>
       students = this.createStudentIndex(this.props.students)
+      teacher = this.props.currentUser.role === 'admin' ? <h1 className='teacher'>Teacher : {this.props.course.teacher}</h1> : <h1></h1>
       this.viewPorts = this.createStudentViewPorts(this.props.students)
     }
     if (this.state.content === ''){
       emptyViewPortMessage = <li id='empty-message' className='empty-view-port-message'>There is no student selected</li>
     }
-
+    debugger
     return (
       <div className='course-profile-container'>
         {title}
+        {teacher}
         <div className='index-port-container'>
           <ul className='profile-index student-index'>
             {students}

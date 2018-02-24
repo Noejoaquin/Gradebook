@@ -6,11 +6,15 @@
   color: #636664;
 }
 
-.course-title{
+.course-title, .teacher{
   display: flex;
   justify-content: center;
   font-size: 38px;
   text-align: center;
+}
+
+.teacher {
+  font-size: 30px;
 }
 
 .student-index {
