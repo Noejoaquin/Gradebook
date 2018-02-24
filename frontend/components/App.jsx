@@ -6,6 +6,7 @@ import AdminProfileContainer from './teacher_admin/admin_profile_container';
 import CourseProfileContainer from './course/course_profile_container';
 import StudentProfileContainer from './student/student_profile_container';
 import NavContainer from "./nav/nav_container";
+import { Footer } from './footer/footer';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
       <Route exact path='/n/student/:id' component={StudentProfileContainer} />
       <ProtectedRoute exact path='/n/admin/:id' component={AdminProfileContainer} />
     </Switch>
+    <Route path='/n' component={Footer} />
   </div>
 );
 
