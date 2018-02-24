@@ -75,14 +75,13 @@ class SessionForm extends React.Component {
                   />
                 </li>
               </label>
-
                 <button className='login-button login' onSubmit={this.handleSubmit}>login</button>
                 <br/>
                 <button className='login-button teacher-login' onClick={this.handleGuestTeacherLogin}>Guest Teacher Login</button>
                 <br/>
                 <button className='login-button teacher-login' onClick={this.handleGuestStudentLogin}>Guest Student Login</button>
                 <br/>
-                <button className='login-button teacher-login' onClick={this.handleGuestStudentLogin}>Guest Admin Login</button>
+                <button className='login-button teacher-login' onClick={this.handleGuestAdminLogin}>Guest Admin Login</button>
             </form>
           </div>
         </div>
