@@ -18,10 +18,12 @@ class Profile extends React.Component {
       return (
         <CourseIndexItem
           key={course.id}
+          currentUser={this.props.currentUser}
           name={course.name}
           overallGrade={course.overall_grade}
           id={course.id}
           numberOfSudents={course.number_of_students}
+          teacher={course.teacher}
         />
       );
     });
