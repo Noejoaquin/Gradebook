@@ -39,7 +39,11 @@ class Profile extends React.Component {
     }
 
     if (this.props.currentUser !== null) {
-      greeting = <h1 className='greeting-message-1'>Welcome {this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
+      if (this.props.currentUser.role === 'admin'){
+        greeting = <h1 className='greeting-message-1'>Welcome {this.props.currentUser.first_name} {this.props.currentUser.last_name}, {this.props.currentUser.title}</h1>
+      } else {
+        greeting = <h1 className='greeting-message-1'>Welcome {this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
+      }
       if (this.props.currentUser.role === 'teacher'){
         greeting2 = <h2 className='greeting-message-2'>Your Course List is Below</h2>
       } else {
