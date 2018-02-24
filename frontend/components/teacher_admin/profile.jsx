@@ -1,6 +1,6 @@
 import React from "react";
-import { TeacherCourseIndexItem } from "../teacher/teacher_course_index_item";
-class AdminProfile extends React.Component {
+import { CourseIndexItem } from "./course_index_item";
+class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.courses = this.props.courses;
@@ -15,7 +15,7 @@ class AdminProfile extends React.Component {
   createCourseList(courses) {
     let list = courses.map(course => {
       return (
-        <TeacherCourseIndexItem
+        <CourseIndexItem
           key={course.id}
           name={course.name}
           overallGrade={course.overall_grade}
@@ -51,4 +51,4 @@ class AdminProfile extends React.Component {
   }
 }
 
-export default AdminProfile;
+export default Profile;

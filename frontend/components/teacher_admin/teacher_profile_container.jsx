@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { login } from "../../actions/session_actions";
-import TeacherProfile from "./teacher_profile";
+import Profile from "./profile";
 import { fetchCourses } from '../../actions/course_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -27,4 +27,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TeacherProfile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
