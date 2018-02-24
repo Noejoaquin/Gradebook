@@ -33,7 +33,8 @@ class SessionForm extends React.Component {
   }
 
   handleGuestAdminLogin(){
-    // this.see
+    this.setState({email:'jack', password:'starwars'})
+    this.handleSubmit
   }
 
   render() {
@@ -80,6 +81,8 @@ class SessionForm extends React.Component {
                 <button className='login-button teacher-login' onClick={this.handleGuestTeacherLogin}>Guest Teacher Login</button>
                 <br/>
                 <button className='login-button teacher-login' onClick={this.handleGuestStudentLogin}>Guest Student Login</button>
+                <br/>
+                <button className='login-button teacher-login' onClick={this.handleGuestStudentLogin}>Guest Admin Login</button>
             </form>
           </div>
         </div>
