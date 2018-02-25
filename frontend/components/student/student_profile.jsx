@@ -38,6 +38,7 @@ class StudentProfile extends React.Component {
       <div className='student-profile-container'>
         {title}
         {gpa}
+        <h2 className='enrolled'>Enrolled Courses</h2>
         <ul className='profile-container course-list-container'>
           {classList}
         </ul>
