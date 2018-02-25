@@ -55,7 +55,6 @@ class CourseProfile extends React.Component {
     if (this.state.content === ''){
       emptyViewPortMessage = <li id='empty-message' className='empty-view-port-message'>There is no student selected</li>
     }
-    debugger
     return (
       <div className='course-profile-container'>
         {title}

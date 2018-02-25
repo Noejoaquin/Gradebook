@@ -33,7 +33,7 @@
   width: 400px;
   margin: 0 auto;
   margin-top: 37px;
-  height: 380px;
+  height: 400px;
   background-color: #fff;
   border: 1px solid #d8d0ce;
   border-radius: 4px;
@@ -48,6 +48,7 @@
   justify-content: center;
   margin-top: 20px;
 }
+
 .session-form {
   display: flex;
   justify-content: center;
@@ -56,6 +57,7 @@
   font-weight: 300;
   color: #636664;
 }
+
 input {
   border: 1px solid black;
   margin-bottom: 2px;
@@ -77,6 +79,7 @@ input {
   padding: 5px;
   letter-spacing: 0.5px;
 }
+
 .login-button:hover {
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;

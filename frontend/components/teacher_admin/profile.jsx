@@ -13,7 +13,6 @@ class Profile extends React.Component {
   }
 
   createCourseList(courses) {
-    debugger
     let list = courses.map(course => {
       return (
         <CourseIndexItem
@@ -50,7 +49,6 @@ class Profile extends React.Component {
         greeting2 = <h2 className='greeting-message-2'>All Courses are Listed Below</h2>
       }
     }
-    debugger
     return (
       <div className='profile-container'>
         <div className='teacher-greeting-contaner'>
