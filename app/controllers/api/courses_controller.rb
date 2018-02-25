@@ -4,7 +4,6 @@ class Api::CoursesController < ApplicationController
     if params[:data][:role] == 'teacher'
       @courses = Course.find_courses(params[:data][:role], params[:data][:id])
     else
-      # debugger
       @courses = Course.all
     end
     @courses.each do |course|

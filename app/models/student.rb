@@ -31,7 +31,6 @@ class Student < ApplicationRecord
     student_id = student_id.to_i # userID
     id = Student.where(user_id: student_id).first.id
     student_grade = StudentGrade.where(course_id: course_id).where(student_id: id ).first
-    # debugger
     student_grade.update(grade: grade)
 
     course = Course.find(course_id)
