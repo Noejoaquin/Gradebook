@@ -23,17 +23,17 @@ class SessionForm extends React.Component {
   }
 
   handleGuestTeacherLogin(e){
-    this.setState({email: 'noe', password:'starwars'})
-    this.handleSubmit
-  }
-
-  handleGuestStudentLogin(e){
     this.setState({email: 'Michael', password:'starwars'})
     this.handleSubmit
   }
 
+  handleGuestStudentLogin(e){
+    this.setState({email: 'Obi', password:'starwars'})
+    this.handleSubmit
+  }
+
   handleGuestAdminLogin(){
-    this.setState({email:'jack', password:'starwars'})
+    this.setState({email:'Jack', password:'starwars'})
     this.handleSubmit
   }
 
