@@ -47,7 +47,7 @@ class Student < ApplicationRecord
     student = Student.where(user_id: id).first
     grades = student.grades.map(&:grade)
     gpa = ( (grades.reduce(:+)) / grades.count ) / 25.0
-    student.update(gpa: gpa)
+    student.update(gpa: gpa.round(2))
   end
 
 end
