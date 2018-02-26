@@ -44,8 +44,14 @@ class StudentPortForm extends React.Component {
 
   render() {
     let button;
+    let studentGrade;
     let error = this.constuctError()
     this.checkButton()
+    if (this.props.currentUser.role == 'teacher'){
+      studentGrade = <input type='number' onChange={this.handleGradeChange} className='grade-input' value={this.state.grade}></input>
+    } else {
+      studentGrade = <span>{this.state.grade}</span>
+    }
 
     return (
       <form className='student-port'>
@@ -55,7 +61,7 @@ class StudentPortForm extends React.Component {
           <h3 className='current-grade-label'>Current Grade:</h3>
           {error}
           <li className='grade-input-container'>
-            <input type='number' onChange={this.handleGradeChange} className='grade-input' value={this.state.grade}></input> / 100
+            {studentGrade} / 100
           </li>
           { this.button }
         </div>

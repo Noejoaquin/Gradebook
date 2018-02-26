@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   let studentId = ownProps.studentId
   let courseId = ownProps.courseId
   let grade = ownProps.grades.filter((grade) => grade.course_id === courseId)[0].grade
+  let currentUser = ownProps.currentUser
   let firstName = ownProps.firstName
   let lastName = ownProps.lastName
   let errors = state.errors.student
@@ -14,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
     studentId,
     grade,
     courseId,
+    currentUser,
     firstName,
     lastName,
     errors
