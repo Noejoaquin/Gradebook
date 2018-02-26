@@ -70,9 +70,9 @@ const ProtectedTeacher = ({
       path={path}
       render={props => {
         if (loggedIn && currentUser.role !== "teacher") {
-          return <Component {...props} />;
-        } else {
           return <Redirect to="/" />;
+        } else {
+          return <Component {...props} />;
         }
       }}
     />
@@ -133,9 +133,7 @@ const mapStateToProps = state => {
 };
 
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
-export const ProtectedRoute = withRouter(
-  connect(mapStateToProps, null)(Protected)
-);
+
 export const ProtectedTeacherAdminRoute = withRouter(
   connect(mapStateToProps, null)(ProtectedTeacherAdmin)
 );
