@@ -69,10 +69,10 @@ const ProtectedTeacher = ({
     <Route
       path={path}
       render={props => {
-        if (loggedIn && currentUser.role !== "teacher") {
-          return <Redirect to="/" />;
-        } else {
+        if (loggedIn && currentUser.role === "teacher") {
           return <Component {...props} />;
+        } else {
+          return <Redirect to="/" />;
         }
       }}
     />
