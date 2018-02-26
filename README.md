@@ -8,4 +8,4 @@ A course reader built with Postgres, Ruby on Rails, and React.js, it allows auth
 I decided to implement my own authentication using Rails' Bcrypt gem, and further decided against allowing users to sign up to use the application, instead opting to have all possible users already seeded in the app's backend. This is something I may change in the future, as the primary goal of this project was to familiarize myself with different types of authorization, and navigability.
 
 ## Get Gradebook Up and Running
-To get Gradebook up and running on your local machine...
+To get Gradebook up and running on your local machine clone this repository, navigate to that folder in your terminal and run `bundle && rake db:migrate && rake db:seed && rails server` in one tab. In another tab, run `npm install` and then `webpack --watch`. After that, navigate to localhost:3000 and click around! 
