@@ -13,13 +13,17 @@
   text-align: center;
 }
 
+.course-title {
+  color: #36C967;
+}
+
 .teacher {
   font-size: 30px;
 }
 
 .student-index {
   width:300px;
-  height: 300px;
+  height: 325px;
   overflow-x:hidden;
   overflow-y: scroll;
 }
@@ -40,7 +44,7 @@
 }
 
 .student-port-container {
-  height: 300px;
+  height: 325px;
   width: 300px;
   border: 1px solid #636664;
   margin-top: 15px;
@@ -56,17 +60,18 @@
 
 .form-content {
   margin: 0 auto;
-  margin-top: 38px;
+  margin-top: 15px;
   width: 200px;
   text-align: center;
 }
 
 .student-form-name {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .link-to-student-profile {
-  font-size: 15px;
+  font-size: 20px;
+  letter-spacing: .5px;
   color: #36C967
 }
 
@@ -75,12 +80,13 @@
 }
 
 .current-grade-label {
-  font-size: 18px;
-  margin-top: 34px;
+  font-size: 22px;
+  letter-spacing: .5px;
+  margin-top: 27px;
 }
 
 .grade-input-container {
-  margin-top: 25px
+  margin-top: 15px
 }
 
 .grade-input {
