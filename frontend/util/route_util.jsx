@@ -6,11 +6,11 @@ import {Route, Redirect, withRouter}  from 'react-router-dom';
 
 const Auth = ({component: Component, path, loggedIn, currentUser}) => {
   let nextPath;
-  if ( currentUser && currentUser.role === 'teacher'){
+  if (loggedIn && currentUser.role === 'teacher'){
     nextPath = `/n/teacher/${currentUser.id}`
-  } else if (currentUser && currentUser.role === 'student'){
+  } else if (loggedIn && currentUser.role === 'student'){
     nextPath = `/n/student/${currentUser.id}`
-  } else if (currentUser) {
+  } else if (loggedIn) {
     nextPath = `/n/admin/${currentUser.id}`
   }
 
@@ -32,9 +32,10 @@ const Protected = ({component: Component, path, loggedIn, currentUser}) => {
   return (
   <Route path={path} render={(props) => {
       if (loggedIn && currentUser.role !== 'student'){
+        debugger
         return <Component {...props} />
-      } else if (loggedIn){
-        return <Redirect to={`/n/student/${currentUser.id}`} />
+      } else if (loggedIn && currentUser.role === 'student' && !path.includes('course') && !path.includes('teacher') && !path.includes('admin')){
+        return <Component {...props} />
       } else {
         return <Redirect to='/' />
       }

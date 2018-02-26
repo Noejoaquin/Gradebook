@@ -18,21 +18,22 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault()
     this.props.login(this.state)
   }
 
   handleGuestTeacherLogin(e){
-    debugger
+    e.preventDefault()
     this.props.login({email: 'Michael', password:'starwars'})
   }
 
   handleGuestStudentLogin(e){
+    e.preventDefault()
     this.props.login({email: 'Obi', password:'starwars'})
   }
 
   handleGuestAdminLogin(e){
+    e.preventDefault()
     this.props.login({email:'Jack', password:'starwars'})
   }
 

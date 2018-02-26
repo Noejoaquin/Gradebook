@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   let id = parseInt(ownProps.location.pathname.split('/')[3])
   let allStudents = Object.keys(state.entities.students).map((id) => state.entities.students[id])
   let student = allStudents.filter((student) => student.id === id)[0]
+  debugger
   return {
     id,
     student
