@@ -8,7 +8,10 @@ class TeacherProfile extends React.Component {
 
   componentDidMount() {
     if (this.props.courses.length === 0 && this.props.currentUser !== null) {
-      this.props.fetchCourses({id:this.props.currentUser.id, role:this.props.currentUser.role});
+      this.props.fetchCourses({
+        id: this.props.currentUser.id,
+        role: this.props.currentUser.role
+      });
     }
   }
 
@@ -35,17 +38,20 @@ class TeacherProfile extends React.Component {
     }
 
     if (this.props.currentUser !== null) {
-      greeting = <h1 className='greeting-message-1'>Welcome {this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
+      greeting = (
+        <h1 className="greeting-message-1">
+          Welcome {this.props.currentUser.first_name}{" "}
+          {this.props.currentUser.last_name}
+        </h1>
+      );
     }
     return (
-      <div className='profile-container'>
-        <div className='teacher-greeting-contaner'>
+      <div className="profile-container">
+        <div className="teacher-greeting-contaner">
           {greeting}
-          <h2 className='greeting-message-2'>Your Course List is Below</h2>
+          <h2 className="greeting-message-2">Your Course List is Below</h2>
         </div>
-        <ul className='profile-index'>
-          {courses}
-        </ul>
+        <ul className="profile-index">{courses}</ul>
       </div>
     );
   }

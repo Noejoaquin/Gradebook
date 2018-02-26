@@ -1,69 +1,87 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class StudentPortForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {studentId:this.props.studentId, grade: this.props.grade, courseId:this.props.courseId}
-    this.handleGradeChange = this.handleGradeChange.bind(this)
-    this.originalState = {grade: this.props.grade}
-    this.updateStudentGrade = this.props.updateStudentGrade
-    this.changeGrade = this.changeGrade.bind(this)
-    this.constuctError = this.constuctError.bind(this)
-    this.updateButton = false
+    this.state = {
+      studentId: this.props.studentId,
+      grade: this.props.grade,
+      courseId: this.props.courseId
+    };
+    this.handleGradeChange = this.handleGradeChange.bind(this);
+    this.originalState = { grade: this.props.grade };
+    this.updateStudentGrade = this.props.updateStudentGrade;
+    this.changeGrade = this.changeGrade.bind(this);
+    this.constuctError = this.constuctError.bind(this);
+    this.updateButton = false;
     this.button;
   }
 
-  handleGradeChange(e){
+  handleGradeChange(e) {
     this.updateButton = true;
-    this.setState({grade: e.target.value})
+    this.setState({ grade: e.target.value });
   }
 
-  changeGrade(e){
-    e.preventDefault()
-    this.props.clearErrors()
-    this.button = null
-    this.updateButton = false
-    this.updateStudentGrade(this.state)
+  changeGrade(e) {
+    e.preventDefault();
+    this.props.clearErrors();
+    this.button = null;
+    this.updateButton = false;
+    this.updateStudentGrade(this.state);
   }
 
-  constuctError(){
+  constuctError() {
     if (this.props.errors) {
-     return <p className='session-error'>{this.props.errors[0]}</p>;
+      return <p className="session-error">{this.props.errors[0]}</p>;
     } else {
       return <p />;
     }
   }
 
-  checkButton(){
-    if (this.updateButton){
-      this.button = <button className='update-button' onClick={this.changeGrade} >Update Student's Grade</button>
+  checkButton() {
+    if (this.updateButton) {
+      this.button = (
+        <button className="update-button" onClick={this.changeGrade}>
+          Update Student's Grade
+        </button>
+      );
     }
   }
-
 
   render() {
     let button;
     let studentGrade;
-    let error = this.constuctError()
-    this.checkButton()
-    if (this.props.currentUser.role == 'teacher'){
-      studentGrade = <input type='number' onChange={this.handleGradeChange} className='grade-input' value={this.state.grade}></input>
+    let error = this.constuctError();
+    this.checkButton();
+    if (this.props.currentUser.role == "teacher") {
+      studentGrade = (
+        <input
+          type="number"
+          onChange={this.handleGradeChange}
+          className="grade-input"
+          value={this.state.grade}
+        />
+      );
     } else {
-      studentGrade = <span>{this.state.grade}</span>
+      studentGrade = <span>{this.state.grade}</span>;
     }
 
     return (
-      <form className='student-port'>
-        <div className='form-content'>
-          <h1 className='student-form-name'>{this.props.firstName} {this.props.lastName}</h1>
-          <h3 className='link-to-student-profile'><Link to={`/student/${this.props.studentId}`}>Visit their profile</Link></h3>
-          <h3 className='current-grade-label'>Current Grade:</h3>
+      <form className="student-port">
+        <div className="form-content">
+          <h1 className="student-form-name">
+            {this.props.firstName} {this.props.lastName}
+          </h1>
+          <h3 className="link-to-student-profile">
+            <Link to={`/student/${this.props.studentId}`}>
+              Visit their profile
+            </Link>
+          </h3>
+          <h3 className="current-grade-label">Current Grade:</h3>
           {error}
-          <li className='grade-input-container'>
-            {studentGrade} / 100
-          </li>
-          { this.button }
+          <li className="grade-input-container">{studentGrade} / 100</li>
+          {this.button}
         </div>
       </form>
     );

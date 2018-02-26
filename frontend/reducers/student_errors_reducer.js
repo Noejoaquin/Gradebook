@@ -1,5 +1,8 @@
-import merge from 'lodash/merge';
-import { RECEIVE_STUDENT_ERRORS, CLEAR_ERRORS} from '../actions/student_actions';
+import merge from "lodash/merge";
+import {
+  RECEIVE_STUDENT_ERRORS,
+  CLEAR_ERRORS
+} from "../actions/student_actions";
 
 const StudentErrorsReducer = (state = [], action) => {
   switch (action.type) {
@@ -11,6 +14,5 @@ const StudentErrorsReducer = (state = [], action) => {
       return state;
   }
 };
-
 
 export default StudentErrorsReducer;

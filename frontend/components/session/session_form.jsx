@@ -18,29 +18,29 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault()
-    this.props.login(this.state)
+    e.preventDefault();
+    this.props.login(this.state);
   }
 
-  handleGuestTeacherLogin(e){
-    e.preventDefault()
-    this.props.login({email: 'Michael', password:'starwars'})
+  handleGuestTeacherLogin(e) {
+    e.preventDefault();
+    this.props.login({ email: "Michael", password: "starwars" });
   }
 
-  handleGuestStudentLogin(e){
-    e.preventDefault()
-    this.props.login({email: 'Obi', password:'starwars'})
+  handleGuestStudentLogin(e) {
+    e.preventDefault();
+    this.props.login({ email: "Obi", password: "starwars" });
   }
 
-  handleGuestAdminLogin(e){
-    e.preventDefault()
-    this.props.login({email:'Jack', password:'starwars'})
+  handleGuestAdminLogin(e) {
+    e.preventDefault();
+    this.props.login({ email: "Jack", password: "starwars" });
   }
 
   render() {
     let error;
     if (this.props.errors) {
-      error = <p className='session-error'>{this.props.errors[0]}</p>;
+      error = <p className="session-error">{this.props.errors[0]}</p>;
     } else {
       error = <p />;
     }
@@ -57,10 +57,10 @@ class SessionForm extends React.Component {
             <form>
               <label>
                 {" "}
-                <li className='field'>Email</li>
+                <li className="field">Email</li>
                 <li>
                   <input
-                    className='session-input'
+                    className="session-input"
                     onChange={this.handleChange("email")}
                     value={this.state.email}
                   />
@@ -68,23 +68,43 @@ class SessionForm extends React.Component {
               </label>
               <label>
                 {" "}
-                <li className='field'>Password</li>
-                <li className='password'>
+                <li className="field">Password</li>
+                <li className="password">
                   <input
-                    className='session-input'
+                    className="session-input"
                     type="password"
                     onChange={this.handleChange("password")}
                     value={this.state.password}
                   />
                 </li>
               </label>
-                <button className='login-button login' onClick={this.handleSubmit}>Login</button>
-                <br/>
-                <button className='login-button teacher-login' onClick={this.handleGuestTeacherLogin}>Guest Teacher Login</button>
-                <br/>
-                <button className='login-button teacher-login' onClick={this.handleGuestStudentLogin}>Guest Student Login</button>
-                <br/>
-                <button className='login-button teacher-login' onClick={this.handleGuestAdminLogin}>Guest Admin Login</button>
+              <button
+                className="login-button login"
+                onClick={this.handleSubmit}
+              >
+                Login
+              </button>
+              <br />
+              <button
+                className="login-button teacher-login"
+                onClick={this.handleGuestTeacherLogin}
+              >
+                Guest Teacher Login
+              </button>
+              <br />
+              <button
+                className="login-button teacher-login"
+                onClick={this.handleGuestStudentLogin}
+              >
+                Guest Student Login
+              </button>
+              <br />
+              <button
+                className="login-button teacher-login"
+                onClick={this.handleGuestAdminLogin}
+              >
+                Guest Admin Login
+              </button>
             </form>
           </div>
         </div>

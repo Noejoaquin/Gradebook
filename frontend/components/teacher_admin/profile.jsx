@@ -8,7 +8,10 @@ class Profile extends React.Component {
 
   componentDidMount() {
     if (this.props.currentUser !== null) {
-      this.props.fetchCourses({id:this.props.currentUser.id, role:this.props.currentUser.role});
+      this.props.fetchCourses({
+        id: this.props.currentUser.id,
+        role: this.props.currentUser.role
+      });
     }
   }
 
@@ -38,26 +41,38 @@ class Profile extends React.Component {
     }
 
     if (this.props.currentUser !== null) {
-      if (this.props.currentUser.role === 'admin'){
-        greeting = <h1 className='greeting-message-1'>Welcome {this.props.currentUser.first_name} {this.props.currentUser.last_name}, {this.props.currentUser.title}</h1>
+      if (this.props.currentUser.role === "admin") {
+        greeting = (
+          <h1 className="greeting-message-1">
+            Welcome {this.props.currentUser.first_name}{" "}
+            {this.props.currentUser.last_name}, {this.props.currentUser.title}
+          </h1>
+        );
       } else {
-        greeting = <h1 className='greeting-message-1'>Welcome {this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
+        greeting = (
+          <h1 className="greeting-message-1">
+            Welcome {this.props.currentUser.first_name}{" "}
+            {this.props.currentUser.last_name}
+          </h1>
+        );
       }
-      if (this.props.currentUser.role === 'teacher'){
-        greeting2 = <h2 className='greeting-message-2'>Your Courses are Listed Below</h2>
+      if (this.props.currentUser.role === "teacher") {
+        greeting2 = (
+          <h2 className="greeting-message-2">Your Courses are Listed Below</h2>
+        );
       } else {
-        greeting2 = <h2 className='greeting-message-2'>All Courses are Listed Below</h2>
+        greeting2 = (
+          <h2 className="greeting-message-2">All Courses are Listed Below</h2>
+        );
       }
     }
     return (
-      <div className='profile-container'>
-        <div className='teacher-greeting-contaner'>
+      <div className="profile-container">
+        <div className="teacher-greeting-contaner">
           {greeting}
           {greeting2}
         </div>
-        <ul className='profile-index'>
-          {courses}
-        </ul>
+        <ul className="profile-index">{courses}</ul>
       </div>
     );
   }
