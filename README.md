@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Gradebook
 
-Things you may want to cover:
+Welcome to Gradebook! An application for administrators, teachers, and students, Gradebook allows teachers to update the grades of their students as well as view their students' profiles, gives admins the ability to visit any course profile, and allows Students to view the classes they are enrolled in as well as their GPA.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##
