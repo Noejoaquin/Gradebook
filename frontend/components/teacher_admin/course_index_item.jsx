@@ -8,7 +8,7 @@ export const CourseIndexItem = ({name, overallGrade, id, numberOfSudents, curren
     taughtBy = <div>Taught By: {teacher} </div>
   }
   return (
-    <li className='profile-index-item'><Link to={`/n/course/${id}`}>
+    <li className='profile-index-item'><Link to={`/course/${id}`}>
       <div className='course-name'>
         {name}
       </div>

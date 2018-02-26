@@ -19,7 +19,7 @@ class NavBar extends React.Component {
         this.props.currentUser.role === "admin" &&
         !this.props.ownProps.location.pathname.includes("admin")
       ) {
-        profilePath = `/n/admin/${this.props.currentUser.id}`;
+        profilePath = `/admin/${this.props.currentUser.id}`;
         redirect = (
           <Link to={profilePath}>
             <div className="nav-button">Back To Profile</div>
@@ -29,7 +29,7 @@ class NavBar extends React.Component {
         this.props.currentUser.role === "teacher" &&
         !this.props.ownProps.location.pathname.includes("teacher")
       ) {
-        profilePath = `/n/teacher/${this.props.currentUser.id}`;
+        profilePath = `/teacher/${this.props.currentUser.id}`;
         redirect = (
           <Link to={profilePath}>
             <div className="nav-button">Back To Profile</div>

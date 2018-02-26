@@ -8,11 +8,12 @@ const Auth = ({component: Component, path, loggedIn, currentUser}) => {
   let nextPath;
   // debugger
   if (loggedIn && currentUser.role === 'teacher'){
-    nextPath = `/n/teacher/${currentUser.id}`
+    nextPath = `/teacher/${currentUser.id}`
   } else if (loggedIn && currentUser.role === 'student'){
-    nextPath = `/n/student/${currentUser.id}`
+    debugger
+    nextPath = `/student/${currentUser.id}`
   } else if (loggedIn) {
-    nextPath = `/n/admin/${currentUser.id}`
+    nextPath = `/admin/${currentUser.id}`
   }
 
   return (
@@ -28,6 +29,20 @@ const Auth = ({component: Component, path, loggedIn, currentUser}) => {
   )}/>
   )
 };
+
+const Nav = ({component: Component, path, loggedIn, currentUser}) => {
+  debugger
+  return (
+  <Route path={path} render={(props) => {
+      if (loggedIn){
+        return <Component {...props} />
+      } else {
+        return ''
+      }
+  }}/>
+)};
+
+
 
 const Protected = ({component: Component, path, loggedIn, currentUser}) => {
   return (
@@ -58,7 +73,7 @@ const ProtectedStudent = ({component: Component, path, loggedIn, currentUser}) =
   <Route path={path} render={(props) => {
       if (loggedIn && currentUser.role !== 'student'){
         return <Component {...props} />
-      } else if (loggedIn && currentUser.role === 'student' && (parseInt(props.location.pathname.split('/')[3]) === currentUser.id)){
+      } else if (loggedIn && currentUser.role === 'student' && (parseInt(props.location.pathname.split('/')[2]) === currentUser.id)){
         return <Component {...props} />
       } else {
         return <Redirect to='/' />
@@ -90,3 +105,4 @@ export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protecte
 export const ProtectedTeacherAdminRoute = withRouter(connect(mapStateToProps, null)(ProtectedTeacherAdmin));
 export const ProtectedStudentRoute = withRouter(connect(mapStateToProps, null)(ProtectedStudent));
 export const ProtectedAdminRoute = withRouter(connect(mapStateToProps, null)(ProtectedAdmin));
+export const NavRoute = withRouter(connect(mapStateToProps, null)(Nav));

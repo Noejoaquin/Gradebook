@@ -57,7 +57,7 @@ class StudentPortForm extends React.Component {
       <form className='student-port'>
         <div className='form-content'>
           <h1 className='student-form-name'>{this.props.firstName} {this.props.lastName}</h1>
-          <h3 className='link-to-student-profile'><Link to={`/n/student/${this.props.studentId}`}>Visit their profile</Link></h3>
+          <h3 className='link-to-student-profile'><Link to={`/student/${this.props.studentId}`}>Visit their profile</Link></h3>
           <h3 className='current-grade-label'>Current Grade:</h3>
           {error}
           <li className='grade-input-container'>

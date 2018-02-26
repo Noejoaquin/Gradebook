@@ -26,6 +26,7 @@ class StudentProfile extends React.Component {
   }
 
   render() {
+    debugger
     let classList;
     let title;
     let gpa;
