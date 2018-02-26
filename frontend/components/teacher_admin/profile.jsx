@@ -44,7 +44,7 @@ class Profile extends React.Component {
         greeting = <h1 className='greeting-message-1'>Welcome {this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
       }
       if (this.props.currentUser.role === 'teacher'){
-        greeting2 = <h2 className='greeting-message-2'>Your Course List is Below</h2>
+        greeting2 = <h2 className='greeting-message-2'>Your Courses are Listed Below</h2>
       } else {
         greeting2 = <h2 className='greeting-message-2'>All Courses are Listed Below</h2>
       }

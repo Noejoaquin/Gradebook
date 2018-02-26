@@ -9,7 +9,7 @@ export const CourseIndexItem = ({name, overallGrade, id, numberOfSudents, curren
   }
   return (
     <li className='profile-index-item'><Link to={`/n/course/${id}`}>
-      <div>
+      <div className='course-name'>
         {name}
       </div>
       <div>
