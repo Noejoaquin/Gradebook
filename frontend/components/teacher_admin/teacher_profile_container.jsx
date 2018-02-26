@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => {
   if (allCourses.length > 1) {
    courses = allCourses.filter((course) => {
      return state.session.currentUser.courses.includes(course.id)
-
  })
 }
   return {
