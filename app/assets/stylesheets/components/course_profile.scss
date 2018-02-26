@@ -31,6 +31,10 @@
 .student-index-item {
   width:270px;
 }
+
+.student-index-item:hover {
+  background-color: #144625;
+}
 .index-port-container {
   display:flex;
   justify-content: space-between;
@@ -76,7 +80,7 @@
 }
 
 .link-to-student-profile:hover {
-  color: #636664;
+  text-decoration: underline;
 }
 
 .current-grade-label {

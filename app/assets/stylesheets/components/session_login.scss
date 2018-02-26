@@ -6,7 +6,6 @@
 }
 
 .session-form-header {
-  width: 500px;
   margin: 0 auto;
   margin-top: 100px;
   color: #36C967;
@@ -21,11 +20,11 @@
 
 }
 #header-1 {
-  font-size: 45px;
+  font-size: 65px;
 }
 #header-2 {
   margin-top: 25px;
-  font-size: 26px;
+  font-size: 35px;
   letter-spacing: 1px;
 }
 
@@ -52,7 +51,7 @@
 .session-form {
   display: flex;
   justify-content: center;
-  margin-top: 38px;
+  margin-top: 23px;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   color: #636664;
@@ -66,10 +65,20 @@ input {
   border-right: none;
   border-color: #636664;
 }
+
+.session-input{
+  margin: 0 auto;
+  width: 250px;
+}
+
+.password {
+  margin-bottom: 20px;
+}
 .field {
   font-size: 20px;
   letter-spacing: .5px;
   margin-top: 6px;
+  text-align: center;
 }
 
 .login-button {
@@ -78,11 +87,14 @@ input {
   margin-top: 15px;
   padding: 5px;
   letter-spacing: 0.5px;
+  border-radius: 5px;
+  width: 250px;
+  text-align: center;
 }
 
 .login-button:hover {
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
-  background-color: #636664;
+  background-color: #144625;
   color: #fff;
 }
