@@ -1,6 +1,7 @@
 class Api::SessionsController < ApplicationController
 
   def create
+    # debugger
   @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
   if @user
     login(@user)
@@ -11,7 +12,9 @@ class Api::SessionsController < ApplicationController
     else
       render 'api/users/admins/_show'
     end
+    return
   else
+    debugger
     render json: ['Invalid combination of username and password'], status: 401
   end
 end

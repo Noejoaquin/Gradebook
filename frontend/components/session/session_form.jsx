@@ -18,11 +18,13 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault()
     this.props.login(this.state)
   }
 
   handleGuestTeacherLogin(e){
+    debugger
     this.props.login({email: 'Michael', password:'starwars'})
   }
 
@@ -51,7 +53,7 @@ class SessionForm extends React.Component {
         <div className="session-form-container">
           {error}
           <div className="session-form">
-            <form onSubmit={this.handleSubmit}>
+            <form>
               <label>
                 {" "}
                 <li className='field'>Email</li>
@@ -75,7 +77,7 @@ class SessionForm extends React.Component {
                   />
                 </li>
               </label>
-                <button className='login-button login' onSubmit={this.handleSubmit}>Login</button>
+                <button className='login-button login' onClick={this.handleSubmit}>Login</button>
                 <br/>
                 <button className='login-button teacher-login' onClick={this.handleGuestTeacherLogin}>Guest Teacher Login</button>
                 <br/>
