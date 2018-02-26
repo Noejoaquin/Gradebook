@@ -19,6 +19,9 @@ class Api::StudentsController < ApplicationController
       student_id = params[:data][:student_id]
       render json: ['Please input a number'], status: 400
       return
+    elsif params[:data][:grade].to_i > 100 || params[:data][:grade].to_i < 0
+      render json: ['Please input a number between 0 and 100'], status: 400
+      return
     end
     @students, @courses, @grades = Student.update_grade(params[:data][:courseId],
                                             params[:data][:studentId],

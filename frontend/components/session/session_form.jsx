@@ -23,18 +23,15 @@ class SessionForm extends React.Component {
   }
 
   handleGuestTeacherLogin(e){
-    this.setState({email: 'Michael', password:'starwars'})
-    this.handleSubmit
+    this.props.login({email: 'Michael', password:'starwars'})
   }
 
   handleGuestStudentLogin(e){
-    this.setState({email: 'Obi', password:'starwars'})
-    this.handleSubmit
+    this.props.login({email: 'Obi', password:'starwars'})
   }
 
-  handleGuestAdminLogin(){
-    this.setState({email:'Jack', password:'starwars'})
-    this.handleSubmit
+  handleGuestAdminLogin(e){
+    this.props.login({email:'Jack', password:'starwars'})
   }
 
   render() {
@@ -70,6 +67,7 @@ class SessionForm extends React.Component {
                 <li className='field'>Password</li>
                 <li>
                   <input
+                    type="password"
                     onChange={this.handleChange("password")}
                     value={this.state.password}
                   />
