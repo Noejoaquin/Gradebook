@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   var allCourses = Object.keys(state.entities.courses).map(
     id => state.entities.courses[id]
   );
+  debugger
   if (allCourses.length > 1) {
     courses = allCourses.filter(course => {
       return state.session.currentUser.courses.includes(course.id);

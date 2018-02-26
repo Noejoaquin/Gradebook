@@ -9,10 +9,10 @@ import NavContainer from "./nav/nav_container";
 import { Footer } from "./footer/footer";
 import {
   AuthRoute,
-  ProtectedRoute,
   NavRoute,
   ProtectedStudentRoute,
   ProtectedAdminRoute,
+  ProtectedTeacherRoute,
   ProtectedTeacherAdminRoute
 } from "../util/route_util";
 
@@ -21,7 +21,7 @@ const App = () => (
     <NavRoute path="/" component={NavContainer} />
     <Switch>
       <AuthRoute exact path="/" component={SessionFormContainer} />
-      <ProtectedTeacherAdminRoute
+      <ProtectedTeacherRoute
         exact
         path="/teacher/:id"
         component={TeacherProfileContainer}

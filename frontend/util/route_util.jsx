@@ -7,7 +7,7 @@ const Auth = ({ component: Component, path, loggedIn, currentUser }) => {
   if (loggedIn && currentUser.role === "teacher") {
     nextPath = `/teacher/${currentUser.id}`;
   } else if (loggedIn && currentUser.role === "student") {
-    '';
+    ("");
     nextPath = `/student/${currentUser.id}`;
   } else if (loggedIn) {
     nextPath = `/admin/${currentUser.id}`;
@@ -24,7 +24,7 @@ const Auth = ({ component: Component, path, loggedIn, currentUser }) => {
 };
 
 const Nav = ({ component: Component, path, loggedIn, currentUser }) => {
-  '';
+  "";
   return (
     <Route
       path={path}
@@ -33,29 +33,6 @@ const Nav = ({ component: Component, path, loggedIn, currentUser }) => {
           return <Component {...props} />;
         } else {
           return "";
-        }
-      }}
-    />
-  );
-};
-
-const Protected = ({ component: Component, path, loggedIn, currentUser }) => {
-  return (
-    <Route
-      path={path}
-      render={props => {
-        if (loggedIn && currentUser.role !== "student") {
-          return <Component {...props} />;
-        } else if (
-          loggedIn &&
-          currentUser.role === "student" &&
-          (!path.includes("course") ||
-            !path.includes("teacher") ||
-            !path.includes("admin"))
-        ) {
-          return <Component {...props} />;
-        } else {
-          return <Redirect to="/" />;
         }
       }}
     />
@@ -73,6 +50,26 @@ const ProtectedTeacherAdmin = ({
       path={path}
       render={props => {
         if (loggedIn && currentUser.role !== "student") {
+          return <Component {...props} />;
+        } else {
+          return <Redirect to="/" />;
+        }
+      }}
+    />
+  );
+};
+
+const ProtectedTeacher = ({
+  component: Component,
+  path,
+  loggedIn,
+  currentUser
+}) => {
+  return (
+    <Route
+      path={path}
+      render={props => {
+        if (loggedIn && currentUser.role !== "teacher") {
           return <Component {...props} />;
         } else {
           return <Redirect to="/" />;
@@ -147,5 +144,8 @@ export const ProtectedStudentRoute = withRouter(
 );
 export const ProtectedAdminRoute = withRouter(
   connect(mapStateToProps, null)(ProtectedAdmin)
+);
+export const ProtectedTeacherRoute = withRouter(
+  connect(mapStateToProps, null)(ProtectedTeacher)
 );
 export const NavRoute = withRouter(connect(mapStateToProps, null)(Nav));
